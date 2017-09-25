@@ -1,25 +1,133 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>The Decision Maker</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
+      <!-- Do not add `link` tags unless you know what you are doing -->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-      <!-- Do not add `script` tags-->
+      <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Fredericka+the+Great" rel="stylesheet">
+      <!-- Do not add `script` tags unless you know what you are doing -->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <h1>Example</h1>
+    <!-- <img src="assets/styles/board.jpg"> -->
+    <div class="header">
+      <!-- <img alt="chalkboard" title = "chalkboard" src = "https://i.imgur.com/6PNntdp.jpg"> -->
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+        <!-- <div class="welcome-message">Welcome Phuongnhat nguyen</div> -->
+        <nav class="navbar navbar-inverse">
+         <div class="container-fluid">
+             <h1>The Dcision Maker</h1>
+            <div class="navbar-header">
+              <!-- <a class="navbar-brand" href="#">Home</a> -->
+              <!-- <button type="button" class="btn btn-default navbar-btn">Sign Up</button> -->
+              <!-- <button type="button" class="btn btn-default navbar-btn">Log In</button> -->
+            </div>
+          <div class="header-message">
+            <!-- <p>Please Log In</p> -->
+          </div>
+            <!-- Button trigger modal -->
+          <button type="button" id="btn-account" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#account">Account</button>
+        </div>
+      </nav>
+      <!-- Modal auth -->
+      <div class="modal fade" id="account" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="disply: none;">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Account</h5>
+              <p id='message-form'></p>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+              <form id="sign-up" class="hide-signed-in">
+                  <fieldset>
+                    <legend>Sign up</legend>
+                    <input type="text" name="credentials[email]" placeholder="Email">
+                    <input type="password" name="credentials[password]" placeholder="Password">
+                    <input type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation">
+                    <input type="submit" class="button" name="submit" value="Sign up!">
+                  </fieldset>
+                  <!-- <button type="button" class="btn btn-primary">Sign Up</button> -->
+                </form>
+                <!-- class="password" data-toggle="password" -->
+                  <form id="sign-in">
+                      <fieldset>
+                        <legend>Sign In</legend>
+                        <input type="text" name="credentials[email]" placeholder="Email">
+                        <input type="password" name="credentials[password]" placeholder="Password">
+                        <input type="submit" class="button" name="submit" value="Sign In!">
+                      </fieldset>
+                      <!-- <button type="submit" class="btn btn-default">Sign In</button> -->
+                  </form>
+
+                  <form id="change-password">
+                    <fieldset>
+                      <legend>Change Password</legend>
+                      <input type="password" name="passwords[old]" placeholder="Old Password">
+                      <input type="password" name="passwords[new]" placeholder="New Password">
+                      <input type="submit" class="button" name="submit" value="Change Password!">
+                    </fieldset>
+                    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Change Password</button> -->
+                </form>
+            </div>
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primay" id="btn-sign-out">Sign Out</button>
+                <!-- <button type="button" class="btn btn-close">Close</button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Button trigger create List modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create-list">
+      Create List
+    </button>
+
+    <!-- Modal create list -->
+    <div class="modal fade" id="create-list" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Create List</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="create-list-form">
+                <!-- <fieldset> -->
+                  <!-- <legend>Create List</legend> -->
+              <!-- <div class="form-group"> -->
+                <fieldset>
+                  <input type="text" name="lists[name]" placeholder="Name">
+                  <input type="submit" class="button" name="submit" value="Save List">
+                </fieldset>
+              <!-- </div> -->
+
+              <!-- <div class="form-group">
+                  <input type="text" name="credentials[email]" placeholder="Description">
+              </div> -->
+                  <!-- <input type="password" name="credentials[password]" placeholder="Password"> -->
+                  <!-- <input type="submit" class="button" name="submit" value="Sign In!"> -->
+                <!-- </fieldset> -->
+                <!-- <button type="submit" class="btn btn-default" id="btn-save-list">Save List</button> -->
+              </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <!-- <button type="button" class="btn btn-primary" id=btn-save-list>Create List</button> -->
+          </div>
+
+        </div>
+      </div>
+    </div>
     </body>
 </html>
