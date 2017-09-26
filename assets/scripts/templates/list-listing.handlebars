@@ -1,0 +1,9 @@
+{{#each lists as |list|}}
+<div class="col-xs-4 box">
+  <div data-id="{{list.id}}">Name:{{list.name}}
+        {{#each list.items as |item|}}
+        <p class='marked'><input id="checkBox" type="checkbox">{{item.name}}</p>
+        {{/each}}
+  </div>
+</div>
+{{/each}}
