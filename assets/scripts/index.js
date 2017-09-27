@@ -22,6 +22,8 @@ $(() => {
   // $('#btn-save-list').on('click', function () {
   //   console.log('there i am')
   // })
+  $('.create-list-btn').hide()
+
   authEvents.addHandlers()
   listEvents.addHandlers()
   itemEvents.addHandlers()
