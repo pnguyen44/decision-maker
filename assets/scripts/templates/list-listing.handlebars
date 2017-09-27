@@ -1,25 +1,28 @@
 {{#each lists as |list|}}
   <div class="col-xs-4 box">
-    <div id='list-id-{{list.id}}' class="list-name">{{list.name}}
+    <div  class="list-name" id='list-id-{{list.id}}'>
 
       <!-- <div class="glyphicon glyphicon-pencil"></div>
     <div class="glyphicon glyphicon-trash"></div> -->
-
+      <div class="btn-list">
       <button type="button" class="btn-edit-list btn-1" id="btn-edit-list-name-{{list.name}}" data-list-edit-id="{{list.id}}" data-list-edit-name="{{list.name}}">Edit</button>
       <button type="button" class="btn-delete-list btn-1" id="btn-delete-list-{{list.id}}" data-list-delete-id="{{list.id}}">Delete</button>
     </div>
+    <p>{{list.name}}</p>
+    </div>
+
 
     {{#each list.items as |item|}}
-      <div>
+      <div class="item-name">
         {{#if item.mark}}
           <input class="checkBox" id="checked" value='{{item.mark}}' autocomplete="off" checked data-checkbox-item-id="{{item.id}}" data-item-name-id="{{item.name}}" data-list-id='{{item.list_id}}' type="checkbox"><label for='checked'>{{item.name}}</label>
         {{else}}
           <input class="checkBox" value='{{item.mark}}' autocomplete="off" data-checkbox-item-id="{{item.id}}" type="checkbox"><label>{{item.name}}</label>
         {{/if}}
-
+        <div class="btn-item">
         <button type="button" class="btn-edit-item btn-2" id="btn-edit-item-{{item.id}}" data-item-delete-id="{{item.id}}">Edit</button>
         <button type="button" class="btn-delete-item btn-2" id="btn-delete-item-{{item.id}}" data-item-delete-id="{{item.id}}">Delete</button>
-
+      </div>
       </div>
       <!-- </div> -->
       <!-- <div class="icon"> -->
