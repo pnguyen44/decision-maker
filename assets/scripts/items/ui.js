@@ -2,6 +2,7 @@
 const store = require('../store')
 // const game = require('../game')
 const itemsEvents = require('./events')
+const listsEvents = require('../lists/events')
 const onSuccess = function (data) {
   console.log('on sucess data ', data)
 }
@@ -12,10 +13,11 @@ const onError = function (err) {
 const onCreateSuccess = function (data) {
   console.log('onCreateSuccess = data', data)
   store.item = data.item
-  $('.game-message').html("X's turn")
+  // $('.game-message').html("X's turn")
   // store.items.push(store.game)
   console.log('onCreateSuccesss store.item =', store.item)
-  console.log('onCreateSuccesss store.items =', store.items)
+  // console.log('onCreateSuccesss store.items =', store.items)
+  // listsEvents.getLists()
 }
 
 const getItemsSuccess = function (data) {
@@ -25,7 +27,7 @@ const getItemsSuccess = function (data) {
   // console.log('last game id =', store.lastGameID)
   // game.getPlayerStats()
   // console.log('store.items[ store.items.length - 1 ].over =', store.items[ store.items.length - 1 ].over)
-  console.log('isNewUser =', store.isNewUser)
+  // console.log('isNewUser =', store.isNewUser)
   // if (store.isNewUser === true) {
   //   itemsEvents.onCreateGame()
   // } else {
@@ -35,7 +37,7 @@ const getItemsSuccess = function (data) {
 
 const getOneItemSuccess = function (data) {
   store.item = data.item
-  console.log('getOneGameSuccess store.game =', store.item)
+  console.log('getOneGameSuccess store.item =', store.item)
   // game.getLastGame()
   // if (store.game.over === false) {
   //   game.displayLastGame()
@@ -47,12 +49,20 @@ const getOneItemSuccess = function (data) {
 const onUpdateSuccess = function () {
   // store.item = data.item
   console.log('onUpdateSuccess updated')
-  itemsEvents.getItems()
+  // itemsEvents.getItems()
   // console.log('onUpdateSuccess store.items =', store.items)
 }
-const onDeleteSuccess = function () {
+const onDeleteSuccess = function (id) {
   console.log('item as been sucessfully deleted')
   itemsEvents.getItems()
+  listsEvents.getLists()
+  $('#item-id-' + id).remove()
+  $('.btn-delete-item-' + id).remove()
+  // $('#item-id-' + id).text('')
+  // $('.btn-delete-item-' + id).text('')
+
+  // $('#item-id-' + id).text('')
+  // $('"btn-delete-item-' + id).text('')
 }
 module.exports = {
   onCreateSuccess,
