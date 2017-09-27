@@ -1,9 +1,34 @@
 {{#each lists as |list|}}
 <div class="col-xs-4 box">
-  <div data-id="{{list.id}}">Name:{{list.name}}
+      <div id ='list-id-{{list.id}}' class="list-name">{{list.name}}
+
+    <!-- <div class="glyphicon glyphicon-pencil"></div>
+    <div class="glyphicon glyphicon-trash"></div> -->
+
+    <button type="button" class="btn-edit btn-1" id = "btn-edit-list-{{list.id}}" data-list-edit-id="{{list.id}}">Edit</button>
+    <button type="button" class="btn-delete-list btn-1" id = "btn-delete-list-{{list.id}}" data-list-delete-id="{{list.id}}">Delete</button>
+
+    <!-- <div> -->
         {{#each list.items as |item|}}
-        <p class='marked'><input id="checkBox" type="checkbox">{{item.name}}</p>
+        <p class='marked' id="item-id-{{item.id}}"><input id="checkBox" type="checkbox">{{item.name}}
+
+          <!-- <div class="pencil"> -->
+
+          <button type="button" class="btn-edit btn-2" id = "btn-edit-item-{{item.id}}" data-item-delete-id="{{item.id}}">Edit</button>
+          <button type="button" class="btn-delete-item btn-2" id = "btn-delete-item-{{item.id}}" data-item-delete-id="{{item.id}}">Delete</button>
+          <!-- </div> -->
+        </p>
+        <!-- <div class="icon"> -->
+          <!-- <a href="index.html" class="ui-icon-trash ui-btn-icon-right">
+        </div>
+        <span class="ui-icon ui-icon-arrowthick-1-n"></span>
+        <span class="ui-icon-trash"></span>
+        <span class="ui-icon-pencil"></span> -->
         {{/each}}
+        <form class="add-item-form">
+          <input type="text" name= "item[name]" id='item-name-list-id-{{list.id}}' class="item-input" placeholder="Enter Item">
+          <button type="button" class="btn-add-item" data-item-name-list-id="{{list.id}}">Add Item</button>
+      </form>
   </div>
 </div>
 {{/each}}
