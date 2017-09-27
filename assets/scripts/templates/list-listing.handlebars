@@ -5,7 +5,7 @@
       <!-- <div class="glyphicon glyphicon-pencil"></div>
     <div class="glyphicon glyphicon-trash"></div> -->
 
-      <button type="button" class="btn-edit btn-1" id="btn-edit-list-{{list.id}}" data-list-edit-id="{{list.id}}">Edit</button>
+      <button type="button" class="btn-edit-list btn-1" id="btn-edit-list-name-{{list.name}}" data-list-edit-id="{{list.id}}" data-list-edit-name="{{list.name}}">Edit</button>
       <button type="button" class="btn-delete-list btn-1" id="btn-delete-list-{{list.id}}" data-list-delete-id="{{list.id}}">Delete</button>
     </div>
 
@@ -17,7 +17,7 @@
           <input class="checkBox" value='{{item.mark}}' autocomplete="off" data-checkbox-item-id="{{item.id}}" type="checkbox"><label>{{item.name}}</label>
         {{/if}}
 
-        <button type="button" class="btn-edit btn-2" id="btn-edit-item-{{item.id}}" data-item-delete-id="{{item.id}}">Edit</button>
+        <button type="button" class="btn-edit-item btn-2" id="btn-edit-item-{{item.id}}" data-item-delete-id="{{item.id}}">Edit</button>
         <button type="button" class="btn-delete-item btn-2" id="btn-delete-item-{{item.id}}" data-item-delete-id="{{item.id}}">Delete</button>
 
       </div>

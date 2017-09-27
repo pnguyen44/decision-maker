@@ -62,7 +62,6 @@ const signOutSuccess = function (data) {
   $('#account').modal('hide')
   $('.content').hide()
   $('.create-list-btn').hide()
-
 }
 
 const signOutFailure = function (error) {

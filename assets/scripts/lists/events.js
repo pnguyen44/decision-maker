@@ -18,8 +18,10 @@ const onCreateList = function (event) {
 }
 
 const getLists = function () {
+  console.log('getList function')
   listsApi.index()
     .then(listsUi.getListsSuccess)
+    .then(listsUi.editListOnUpdate)
     .catch(listsUi.onError)
 }
 const getOneList = function (id) {

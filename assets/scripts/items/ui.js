@@ -13,11 +13,12 @@ const onError = function (err) {
 const onCreateSuccess = function (data) {
   console.log('onCreateSuccess = data', data)
   store.item = data.item
+
   // $('.game-message').html("X's turn")
   // store.items.push(store.game)
-  console.log('onCreateSuccesss store.item =', store.item)
+  console.log('onCreateSuccesss store.item kn- =', store.item)
   // console.log('onCreateSuccesss store.items =', store.items)
-  // listsEvents.getLists()
+  listsEvents.getLists()
 }
 
 const getItemsSuccess = function (data) {

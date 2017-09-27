@@ -24,11 +24,28 @@ const onCreateSuccess = function (data) {
   $('#create-list-form').modal('hide')
 }
 
+const editListOnUpdate = function() {
+  $('.btn-edit-list').on('click', function () {
+    const listId = $(this).attr('data-list-edit-id')
+    const listName = $(this).attr('data-list-edit-name')
+    console.log('listId=', listId)
+    console.log('listName=', listName)
+    // console.log('edit-list-btn')
+    $('.edit-list-input').val(listName)
+    $('#edit-list').modal('show')
+    $('#edit-list-form').on('submit', function (e) {
+      e.preventDefault()
+      const updatedName = $('.edit-list-input').val()
+      listsEvents.onUpdateList(updatedName, listId)
+    })
+  })
+}
+
 const getListsSuccess = function (data) {
   store.lists = data.lists
-  console.log('data.lists=', data.lists)
+  console.log('getListSuccess, data.lists=', data.lists)
   const showListsHTML = showListsTemplate({lists: data.lists})
-  $('.content').append(showListsHTML)
+  $('.content').html(showListsHTML)
   $('.content').show()
 
   // $('a').on('click', function () {
@@ -53,16 +70,7 @@ const getListsSuccess = function (data) {
     console.log(' ------name --------', itemName)
     // $('.item-input').val('')
     $(inputBox).val('')
-
-    // $(this).parent().siblings().last().append("<p class='marked'><input id='checkBox' type='checkbox'>itemName</p>")
-    // $(this).parent(``).siblings().last().css('color', 'red')
-    // const p = `.item-name-${listId}`
-    // $(p).last().append('<p>this</p>')
     itemsEvents.createOneItem(itemName, false, listId)
-    // $('this').append('<h1>append here</h1>')
-    // $(inputBox).prepend('<p>this</p>')
-    // const p = `.item-name-${listId}`
-    // $(p).last().append('<p>this</p>')
   })
   $('.btn-delete-item').on('click', function () {
     // const itemId = document.getElementById(this).id
@@ -91,6 +99,21 @@ const getListsSuccess = function (data) {
     console.log('listId=', listId)
     itemsEvents.onUpdateItem(itemName, mark, itemId, listId)
   })
+  // $('.btn-edit-list').on('click', function () {
+  //   const listId = $(this).attr('data-list-edit-id')
+  //   const listName = $(this).attr('data-list-edit-name')
+  //   console.log('listId=', listId)
+  //   console.log('listName=', listName)
+  //   // console.log('edit-list-btn')
+  //   $('.edit-list-input').val(listName)
+  //   $('#edit-list').modal('show')
+  //   $('#edit-list-form').on('submit', function (e) {
+  //     e.preventDefault()
+  //     const updatedName = $('.edit-list-input').val()
+  //     listsEvents.onUpdateList(updatedName, listId)
+  //   })
+  //
+  // })
 
   // $('#add-item-form').on('submit', itemsEvents.onCreateItem)
   console.log('on getListsSuccess store.lists =', store.lists)
@@ -113,6 +136,8 @@ const onUpdateSuccess = function () {
   // data should be null.. so list is not a property. that's the error.
   // store.list = data.list
   console.log('onUpdateSuccess was successfull')
+  $('#edit-list').modal('hide')
+  listsEvents.getLists()
   // console.log('onUpdateSuccess store.games =', store.games)
 }
 
@@ -133,5 +158,6 @@ module.exports = {
   onSuccess,
   getOneListSuccess,
   getListsSuccess,
-  onDeleteSuccess
+  onDeleteSuccess,
+  editListOnUpdate
 }
