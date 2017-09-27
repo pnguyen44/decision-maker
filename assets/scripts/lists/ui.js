@@ -1,8 +1,11 @@
 'use strict'
 const store = require('../store')
+const getFormFields = require('../../../lib/get-form-fields')
 // const list = require('../list')
 const listsEvents = require('./events')
 const itemsEvents = require('../items/events')
+const listsApi = require('./api')
+const listsUi = require('./ui')
 // const itemsApi = require('../items/api')
 const showListsTemplate = require('../templates/list-listing.handlebars')
 const onSuccess = function (data) {
@@ -24,22 +27,56 @@ const onCreateSuccess = function (data) {
   $('#create-list-form').modal('hide')
 }
 
-const editListOnUpdate = function() {
-  $('.btn-edit-list').on('click', function () {
-    const listId = $(this).attr('data-list-edit-id')
-    const listName = $(this).attr('data-list-edit-name')
-    console.log('listId=', listId)
-    console.log('listName=', listName)
-    // console.log('edit-list-btn')
-    $('.edit-list-input').val(listName)
-    $('#edit-list').modal('show')
-    $('#edit-list-form').on('submit', function (e) {
-      e.preventDefault()
-      const updatedName = $('.edit-list-input').val()
-      listsEvents.onUpdateList(updatedName, listId)
-    })
-  })
-}
+// const editListOnUpdate = function () {
+//   $('.btn-edit-list').on('click', function () {
+//     const listId = $(this).attr('data-list-edit-id')
+//     const listName = $(this).attr('data-list-edit-name')
+//     console.log('listId=', listId)
+//     console.log('listName=', listName)
+//     // console.log('edit-list-btn')
+//     $('.edit-list-input').val(listName)
+//     $('#edit-list').modal('show')
+//     $('#edit-list-form').on('submit', function (e) {
+//       e.preventDefault()
+//       const updatedName = $('.edit-list-input').val()
+//       console.log('updatedName=', updatedName)
+//       clearForm()
+//       listsEvents.onUpdateList(updatedName, listId)
+//     })
+//   })
+// }
+
+// const clearForm = function () {
+//   $('form').trigger('reset')
+// }
+
+// const editListOnUpdate = function () {
+//   $('.btn-edit-list').on('click', function () {
+//     const listId = $(this).attr('data-list-edit-id')
+//     const listName = $(this).attr('data-list-edit-name')
+//     console.log('listId=', listId)
+//     // console.log('listName=', listName)
+//     // console.log('edit-list-btn')
+//     $('.edit-list-input').val(listName)
+//     $('#edit-list').modal('show')
+//     // $('#edit-list-form').on('submit', function (e) {
+//     //   e.preventDefault()
+//     //   const updatedName = $('.edit-list-input').val()
+//     //   listsEvents.onUpdateList(updatedName, listId)
+//     $('#edit-list-form').on('submit', function (e) {
+//       e.preventDefault()
+//       console.log('i am here in update list')
+//       const data = getFormFields(this)
+//       clearForm()
+//       console.log('onUpdateList2 data = ', data)
+//       const list = data.list
+//       console.log('list = ', list)
+//       console.log('new list name = ', list.name)
+//       // console.log('onUpdateList2 list=', list.name)
+//       listsEvents.onUpdateList(list.name, listId)
+//     })
+//   })
+// }
 
 const getListsSuccess = function (data) {
   store.lists = data.lists
@@ -99,22 +136,44 @@ const getListsSuccess = function (data) {
     console.log('listId=', listId)
     itemsEvents.onUpdateItem(itemName, mark, itemId, listId)
   })
-  // $('.btn-edit-list').on('click', function () {
-  //   const listId = $(this).attr('data-list-edit-id')
-  //   const listName = $(this).attr('data-list-edit-name')
+  // editListOnUpdate()
+  // $('.edit-list-form').on('submit', listsEvents.onUpdateList2)
+  $('.btn-edit-list').on('click', function () {
+    const listId = $(this).attr('data-list-edit-id')
+    store.listId = listId
+    const listName = $(this).attr('data-list-edit-name')
   //   console.log('listId=', listId)
   //   console.log('listName=', listName)
-  //   // console.log('edit-list-btn')
-  //   $('.edit-list-input').val(listName)
-  //   $('#edit-list').modal('show')
+  // //   // console.log('edit-list-btn')
+    $('.edit-list-input').val(listName)
+    $('#edit-list').modal('show')
   //   $('#edit-list-form').on('submit', function (e) {
   //     e.preventDefault()
   //     const updatedName = $('.edit-list-input').val()
+  //     clearForm()
   //     listsEvents.onUpdateList(updatedName, listId)
   //   })
   //
-  // })
+  })
+  $('.btn-edit-item').on('click', function () {
+    store.editItemId = $(this).attr('data-item-edit-id')
+    store.editItemName = $(this).attr('data-item-edit-name')
+    store.editItemlistId = $(this).attr('data-item-edit-list-id')
+    store.editItemMark = $(this).attr('data-item-edit-mark')
 
+  //   console.log('listId=', listId)
+  //   console.log('listName=', listName)
+  // //   // console.log('edit-list-btn')
+    $('.edit-item-input').val(store.editItemName)
+    $('#edit-item').modal('show')
+  //   $('#edit-list-form').on('submit', function (e) {
+  //     e.preventDefault()
+  //     const updatedName = $('.edit-list-input').val()
+  //     clearForm()
+  //     listsEvents.onUpdateList(updatedName, listId)
+  //   })
+  //
+  })
   // $('#add-item-form').on('submit', itemsEvents.onCreateItem)
   console.log('on getListsSuccess store.lists =', store.lists)
   // console.log('isNewUser =', store.isNewUser)
@@ -158,6 +217,6 @@ module.exports = {
   onSuccess,
   getOneListSuccess,
   getListsSuccess,
-  onDeleteSuccess,
-  editListOnUpdate
+  onDeleteSuccess
+  // editListOnUpdate
 }
