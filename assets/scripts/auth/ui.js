@@ -59,6 +59,7 @@ const signOutSuccess = function (data) {
   store.isSignedIn = false
   $('#message-form').html('Successfully signed out')
   $('#account').modal('hide')
+  $('.content').hide()
 }
 
 const signOutFailure = function (error) {
