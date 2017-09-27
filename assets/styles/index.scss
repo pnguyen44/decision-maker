@@ -14,13 +14,6 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   height: 300px;
   width: 30%;
   overflow-y:scroll;
-
-  // margin: 100px, 100px;
-  // margin: 0 15px 0 0;
-  // margin: 0 0 15px;
-  // height: 300px;
-  // width: 30%;
-  // margin: bottom: 50px;
 }
 .row {
   padding: 5px;
@@ -31,12 +24,26 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   font-size: 145%;
 }
 
+#checked {
+  margin-left: 3px;
+  font-size: 10em;
+
+}
+input[type=checkbox]:checked + label {
+  color:red;
+  text-decoration: line-through;
+}
 header {
   color: white;
 }
-// .list-name {
-//   font-size: 20px;
-// }
+label {
+  font-size: 18px;
+  margin-left: 4px;
+}
+
+.list-name {
+  font-size: 20px;
+}
 // .item-name {
 //   font-size: 10px;
 // }
@@ -52,7 +59,7 @@ header {
   height: 32px;
   width: 15%;
   margin-left: 10px;
-  float: right;
+  // float: right;
   // clear: right;
 }
 
