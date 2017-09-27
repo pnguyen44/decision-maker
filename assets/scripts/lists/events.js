@@ -36,12 +36,15 @@ const onUpdateList = function (name, id) {
 
 const onDeleteList = function (id) {
   listsApi.destroy(id)
-    .then(listsUi.onDeleteSuccess)
+    .then(listsUi.onDeleteSuccess(id))
     .catch(listsUi.onError)
 }
 
 const addHandlers = function () {
-  // $('#create-list-form').on('submit', onCreateList)
+  // $('.create-list').on('sumbit', function (e) {
+  //   e.preventDefault()
+  // })
+  $('#create-list-form').on('submit', onCreateList)
   // $('.btn-test').on('click', function () {
   //   console.log('thest')
     // getLists()
