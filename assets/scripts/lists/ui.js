@@ -3,6 +3,7 @@ const store = require('../store')
 // const list = require('../list')
 const listsEvents = require('./events')
 const itemsEvents = require('../items/events')
+// const itemsApi = require('../items/api')
 const showListsTemplate = require('../templates/list-listing.handlebars')
 const onSuccess = function (data) {
   console.log('on sucess data ', data)
@@ -19,7 +20,7 @@ const onCreateSuccess = function (data) {
   console.log('onCreateSuccesss store.list =', store.list)
   // console.log('onCreateSuccesss store.lists =', store.lists)
   clearForm()
-  listsEvents.getLists()
+  // listsEvents.getLists()
   $('#create-list-form').modal('hide')
 }
 
@@ -75,6 +76,20 @@ const getListsSuccess = function (data) {
     const listId = $(this).attr('data-list-delete-id')
     console.log('list id to delete =', listId)
     listsEvents.onDeleteList(listId)
+  })
+
+  $('.checkBox').on('click', function () {
+    const mark = $(this).is(':checked')
+    const itemName = $(this).attr('data-item-name-id')
+    const itemId = $(this).attr('data-checkbox-item-id')
+    const listId = $(this).attr('data-list-id')
+    const value = $(this).val()
+    console.log('value=', value)
+    console.log('isChecked=', mark)
+    console.log('itemName=', itemName)
+    console.log('itemId=', itemId)
+    console.log('listId=', listId)
+    itemsEvents.onUpdateItem(itemName, mark, itemId, listId)
   })
 
   // $('#add-item-form').on('submit', itemsEvents.onCreateItem)
