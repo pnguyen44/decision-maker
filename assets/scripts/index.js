@@ -43,4 +43,11 @@ $(() => {
       $('#btn-sign-out').hide()
     }
   })
+  // $('div').on('click', function () {
+  //   if (store.isSignedIn === true) {
+  //     const itemId = document.getElementById(this)
+  //     console.log('click on trash with element id =', itemId)
+  //     $(this).css('background-color', 'red')
+  //   }
+  // })
 })
