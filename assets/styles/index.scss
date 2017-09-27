@@ -1,5 +1,6 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+$font-size: 96%;
 #btn-account {
   margin-top: -40px;
   // vertical-align: middle;
@@ -26,7 +27,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 #checked {
   margin-left: 3px;
-  font-size: 10em;
+  font-size: $font-size;
 
 }
 input[type=checkbox]:checked + label {
@@ -37,7 +38,7 @@ header {
   color: white;
 }
 label {
-  font-size: 18px;
+  font-size: $font-size;
   margin-left: 4px;
 }
 
@@ -49,18 +50,29 @@ label {
 //
 // }
 .btn-add-item {
-  // float: right;
-  // clear: left;
+  float: right;
+  margin-top: 2px;
+  margin-right: 1px;
 }
 .list-name {
-  font-size: 15px;
+  font-size: $font-size;
   height: 50px;
   // padding-top: 10px;
   // margin-bottom: 12px;
 }
+.add-item-form{
+  height: 38px;
+}
+.item-input {
+  width: 75%;
+}
 .item-name {
   height: 40px;
 }
+.scroll {
+  overflow-y:scroll;
+}
+
 .btn-1 {
   height: 20px;
   width: 15px;
