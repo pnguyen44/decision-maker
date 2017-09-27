@@ -17,6 +17,13 @@ const onCreateItem = function (e) {
     .catch(itemsUi.onError)
 }
 
+const createOneItem = function (name, mark, listId) {
+  mark = false
+  itemsApi.create(name, mark, listId)
+    .then(itemsUi.onCreateSuccess)
+    .catch(itemsUi.onError)
+}
+
 const getItems = function () {
   itemsApi.index()
     .then(itemsUi.getItemsSuccess)
@@ -36,17 +43,22 @@ const onUpdateItem = function (name, mark, itemId, listId) {
 
 const onDeleteItem = function (id) {
   itemsApi.destroy(id)
-    .then(itemsUi.onDeleteSuccess)
+    .then(itemsUi.onDeleteSuccess(id))
     .catch(itemsUi.onError)
 }
 const addHandlers = function () {
-  $('#create-list-form').on('submit', onCreateItem)
+  // $('#create-list-form').on('submit', onCreateItem)
+  // $('.content').on('submit', onCreateItem)
   $('.btn-test').on('click', function () {
   //   console.log('thest')
     getItems()
     // onDeleteItem(12)
-    onUpdateItem('this this', false, 4, 1)
+    // onUpdateItem('this this', false, 4, 1)
   })
+  // $('#btn-add-item').on('click', function () {
+    // const name =
+    // const listId =
+  // })
 }
 
 // module.exports = {
@@ -64,3 +76,4 @@ exports.getOneItem = getOneItem
 exports.getItems = getItems
 exports.addHandlers = addHandlers
 exports.onDeleteItem = onDeleteItem
+exports.createOneItem = createOneItem
