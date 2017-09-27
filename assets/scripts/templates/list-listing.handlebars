@@ -20,7 +20,7 @@
           <input class="checkBox" value='{{item.mark}}' autocomplete="off" data-checkbox-item-id="{{item.id}}" type="checkbox"><label>{{item.name}}</label>
         {{/if}}
         <div class="btn-item">
-        <button type="button" class="btn-edit-item btn-2" id="btn-edit-item-{{item.id}}" data-item-delete-id="{{item.id}}">Edit</button>
+        <button type="button" class="btn-edit-item btn-2" id="btn-edit-item-{{item.id}}" data-item-edit-id="{{item.id}}" data-item-edit-name="{{item.name}}" data-item-edit-list-id = "{{item.list_id}}" data-item-edit-mark="{{item.mark}}">Edit</button>
         <button type="button" class="btn-delete-item btn-2" id="btn-delete-item-{{item.id}}" data-item-delete-id="{{item.id}}">Delete</button>
       </div>
       </div>
