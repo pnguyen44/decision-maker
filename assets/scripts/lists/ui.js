@@ -24,7 +24,8 @@ const onCreateSuccess = function (data) {
   // console.log('onCreateSuccesss store.lists =', store.lists)
   clearForm()
   // listsEvents.getLists()
-  $('#create-list-form').modal('hide')
+  $('#create-list').modal('hide')
+  listsEvents.getLists()
 }
 
 // const editListOnUpdate = function () {
