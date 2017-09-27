@@ -8,11 +8,12 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 .box {
   border-style: solid;
+  background-color: lightyellow;
   border-width: 4px;
   margin: 15px;
   height: 300px;
   width: 30%;
-
+  overflow-y:scroll;
 
   // margin: 100px, 100px;
   // margin: 0 15px 0 0;
@@ -23,4 +24,41 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 .row {
   padding: 5px;
+}
+.glyphicon {
+  float: right;
+  margin-left: 10px;
+  font-size: 145%;
+}
+
+header {
+  color: white;
+}
+// .list-name {
+//   font-size: 20px;
+// }
+// .item-name {
+//   font-size: 10px;
+// }
+// .btn-delete {
+//   float: right;
+//
+// }
+.btn-add-item {
+  // float: right;
+  // clear: left;
+}
+.btn-1{
+  height: 32px;
+  width: 15%;
+  margin-left: 10px;
+  float: right;
+  // clear: right;
+}
+
+.btn-2{
+  height: 32px;
+  width: 15%;
+  margin-left: 10px;
+  // float: right;
 }
