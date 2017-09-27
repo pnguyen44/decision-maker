@@ -14,11 +14,11 @@
 
     <form class="add-item-form">
       <input type="text" name="item[name]" id='item-name-list-id-{{list.id}}' class="item-input" placeholder="Enter Item">
-      <button type="button" class="btn-add-item" data-item-name-list-id="{{list.id}}">Add</button>
-    </form>
+<button type="button" class="btn-add-item" data-item-name-list-id="{{list.id}}">Add</button>
+</form>
 
 
-    {{#each list.items as |item|}}
+{{#each list.items as |item|}}
       <div class="item-name">
           {{#if item.mark}}
             <input class="checkBox" id="checked" value='{{item.mark}}' autocomplete="off" checked data-checkbox-item-id="{{item.id}}" data-item-name-id="{{item.name}}" data-list-id='{{item.list_id}}' type="checkbox"><label for='checked'>{{item.name}}</label>
