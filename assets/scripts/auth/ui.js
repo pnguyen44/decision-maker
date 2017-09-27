@@ -31,6 +31,7 @@ const signInSuccess = function (data) {
   console.log('signInSuccess store.isSignedIn =', store.isSignedIn)
   $('#account').modal('hide')
   listEvents.getLists()
+  $('.create-list-btn').show()
 }
 const signInFailure = function (error) {
   console.error(error)
@@ -60,6 +61,8 @@ const signOutSuccess = function (data) {
   $('#message-form').html('Successfully signed out')
   $('#account').modal('hide')
   $('.content').hide()
+  $('.create-list-btn').hide()
+
 }
 
 const signOutFailure = function (error) {
