@@ -1,7 +1,8 @@
 'use strict'
 const store = require('../store')
 // const list = require('../list')
-// const listsEvents = require('./events')
+const listsEvents = require('./events')
+const itemsEvents = require('../items/events')
 const showListsTemplate = require('../templates/list-listing.handlebars')
 const onSuccess = function (data) {
   console.log('on sucess data ', data)
@@ -18,22 +19,67 @@ const onCreateSuccess = function (data) {
   console.log('onCreateSuccesss store.list =', store.list)
   // console.log('onCreateSuccesss store.lists =', store.lists)
   clearForm()
+  listsEvents.getLists()
+  $('#create-list-form').modal('hide')
 }
 
 const getListsSuccess = function (data) {
   store.lists = data.lists
+  console.log('data.lists=', data.lists)
   const showListsHTML = showListsTemplate({lists: data.lists})
   $('.content').append(showListsHTML)
+  $('.content').show()
+
+  // $('a').on('click', function () {
+  //   console.log('a tag clicked')
+  // })
+  // $('.glyphicon').on('click', function () {
+  //   console.log('icon clicked')
+  // })
+
+  $('.add-item-form').on('submit', function (e) {
+    e.preventDefault()
+  })
+
+  $('.btn-add-item').on('click', function (e) {
+    e.preventDefault()
+    // e.preventDefault()
+
+    const listId = $(this).attr('data-item-name-list-id')
+    console.log('listId to update in=', listId)
+    const inputBox = `#item-name-list-id-${listId}`
+    const itemName = String($(inputBox).val())
+    console.log(' ------name --------', itemName)
+    // $('.item-input').val('')
+    $(inputBox).val('')
+
+    // $(this).parent().siblings().last().append("<p class='marked'><input id='checkBox' type='checkbox'>itemName</p>")
+    // $(this).parent(``).siblings().last().css('color', 'red')
+    // const p = `.item-name-${listId}`
+    // $(p).last().append('<p>this</p>')
+    itemsEvents.createOneItem(itemName, false, listId)
+    // $('this').append('<h1>append here</h1>')
+    // $(inputBox).prepend('<p>this</p>')
+    // const p = `.item-name-${listId}`
+    // $(p).last().append('<p>this</p>')
+  })
+  $('.btn-delete-item').on('click', function () {
+    // const itemId = document.getElementById(this).id
+    const itemId = $(this).attr('data-item-delete-id')
+    console.log('item id to delete =', itemId)
+    itemsEvents.onDeleteItem(itemId)
+  })
+
+  $('.btn-delete-list').on('click', function () {
+    // const itemId = document.getElementById(this).id
+    const listId = $(this).attr('data-list-delete-id')
+    console.log('list id to delete =', listId)
+    listsEvents.onDeleteList(listId)
+  })
+
+  // $('#add-item-form').on('submit', itemsEvents.onCreateItem)
   console.log('on getListsSuccess store.lists =', store.lists)
-  // store.lastGameID = store.games[ store.games.length - 1 ].id
-  // console.log('last game id =', store.lastGameID)
-  // console.log('store.gamnes[ store.games.length - 1 ].over =', store.games[ store.games.length - 1 ].over)
-  console.log('isNewUser =', store.isNewUser)
-  // if (store.isNewUser === true) {
-  //   listsEvents.onCreateGame()
-  // } else {
-  //   game.getLastGame()
-  // }
+  // console.log('isNewUser =', store.isNewUser)
 }
 
 const getOneListSuccess = function (data) {
@@ -55,8 +101,10 @@ const onUpdateSuccess = function () {
   // console.log('onUpdateSuccess store.games =', store.games)
 }
 
-const onDeleteSuccess = function () {
-  console.log('item as been sucessfully deleted')
+const onDeleteSuccess = function (id) {
+  console.log('list as been sucessfully deleted')
+  $('#list-id-' + id).parent().remove()
+  // $('.btn-delete-item-' + id).remove()
 }
 
 const clearForm = function () {
