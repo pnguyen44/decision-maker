@@ -50,8 +50,10 @@ const getOneItemSuccess = function (data) {
 const onUpdateSuccess = function () {
   // store.item = data.item
   console.log('onUpdateSuccess updated')
+  $('#edit-item').modal('hide')
   // itemsEvents.getItems()
   // console.log('onUpdateSuccess store.items =', store.items)
+  listsEvents.getLists()
 }
 const onDeleteSuccess = function (id) {
   console.log('item as been sucessfully deleted')
