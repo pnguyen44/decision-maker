@@ -1,27 +1,28 @@
 {{#each lists as |list|}}
-  <div class="col-xs-4 box">
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 box">
     <div  class="list-name" id='list-id-{{list.id}}'>
 
       <!-- <div class="glyphicon glyphicon-pencil"></div>
     <div class="glyphicon glyphicon-trash"></div> -->
       <div class="btn-list">
-      <button type="button" class="btn-edit-list btn-1" id="btn-edit-list-name-{{list.name}}" data-list-edit-id="{{list.id}}" data-list-edit-name="{{list.name}}">Edit</button>
-      <button type="button" class="btn-delete-list btn-1" id="btn-delete-list-{{list.id}}" data-list-delete-id="{{list.id}}">Delete</button>
+      <button type="button" class="btn-edit-list btn-1 btn-warning btn-xs" id="btn-edit-list-name-{{list.name}}" data-list-edit-id="{{list.id}}" data-list-edit-name="{{list.name}}">Edit</button>
+
+      <button type="button" class="btn-delete-list btn-1 btn-danger btn-xs" id="btn-delete-list-{{list.id}}" data-list-delete-id="{{list.id}}">Delete</button>
     </div>
-    <p>{{list.name}}</p>
+    <h3>{{list.name}}</h3>
     </div>
 
 
     <!-- <form class="add-item-form"> -->
 
       <input type="text" name="item[name]" id='item-choose-list-id-{{list.id}}' class="choose-input" placeholder="">
-        <button type="button" class="btn-choose-item" data-choose-item-list-id="{{list.id}}" data-choose-items="{{list.items}}">Choose</button>
+        <button type="button" class="btn-choose-item pull-right btn-primary btn-xs" data-choose-item-list-id="{{list.id}}" data-choose-items="{{list.items}}">Decide</button>
     <!-- </form> -->
 
     <form class="add-item-form">
     <!-- <div class='choose'> -->
-      <input type="text" name="item[name]" id='item-name-list-id-{{list.id}}' class="item-input" placeholder="Enter Item">
-        <button type="button" class="btn-add-item" data-item-name-list-id="{{list.id}}">Add</button>
+      <input type="text" name="item[name]" class"" id='item-name-list-id-{{list.id}}' class="item-input" placeholder="Enter Item">
+        <button type="button" class="btn-add-item btn-success btn-xs" data-item-name-list-id="{{list.id}}">Add</button>
     <!-- </div> -->
     </form>
 
@@ -29,13 +30,13 @@
 {{#each list.items as |item|}}
       <div class="item-name">
           {{#if item.mark}}
-            <input class="checkBox" id="checked" value='{{item.mark}}' autocomplete="off" checked data-checkbox-item-id="{{item.id}}" data-item-name-id="{{item.name}}" data-list-id='{{item.list_id}}' type="checkbox"><label for='checked'>{{item.name}}</label>
+            <input class="checkBox" id="checked" value='{{item.mark}}' autoc omplete="off" checked data-checkbox-item-id="{{item.id}}" data-item-name-id="{{item.name}}" data-list-id='{{item.list_id}}' type="checkbox"><label for='checked'>{{item.name}}</label>
           {{else}}
             <input class="checkBox" value='{{item.mark}}' autocomplete="off" data-checkbox-item-id="{{item.id}}" type="checkbox"><label>{{item.name}}</label>
           {{/if}}
         <div class="btn-item">
-        <button type="button" class="btn-edit-item btn-2" id="btn-edit-item-{{item.id}}" data-item-edit-id="{{item.id}}" data-item-edit-name="{{item.name}}" data-item-edit-list-id = "{{item.list_id}}" data-item-edit-mark="{{item.mark}}">Edit</button>
-        <button type="button" class="btn-delete-item btn-2" id="btn-delete-item-{{item.id}}" data-item-delete-id="{{item.id}}">Delete</button>
+        <button type="button" class="btn-edit-item btn-2 btn-warning btn-xs" id="btn-edit-item-{{item.id}}" data-item-edit-id="{{item.id}}" data-item-edit-name="{{item.name}}" data-item-edit-list-id = "{{item.list_id}}" data-item-edit-mark="{{item.mark}}">Edit</button>
+        <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" id="btn-delete-item-{{item.id}}" data-item-delete-id="{{item.id}}">Delete</button>
       </div>
       </div>
       <!-- </div> -->
@@ -46,9 +47,5 @@
         <span class="ui-icon-trash"></span>
         <span class="ui-icon-pencil"></span> -->
     {{/each}}
-
-
-
-
   </div>
 {{/each}}

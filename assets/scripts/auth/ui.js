@@ -32,6 +32,7 @@ const signInSuccess = function (data) {
   $('#account').modal('hide')
   listEvents.getLists()
   $('.create-list-btn').show()
+  $('#examples').hide()
 }
 const signInFailure = function (error) {
   console.error(error)
@@ -62,6 +63,7 @@ const signOutSuccess = function (data) {
   $('#account').modal('hide')
   $('.content').hide()
   $('.create-list-btn').hide()
+  $('#examples').show()
 }
 
 const signOutFailure = function (error) {

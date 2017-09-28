@@ -1,75 +1,25 @@
+
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 $font-size: 96%;
-#btn-account {
-  margin-top: -40px;
-  // vertical-align: middle;
-  float: right;
+
+.add-item-form{
+  height: 38px;
 }
 
+body {
+ background-color: lightgray;
+}
 .box {
   border-style: solid;
   background-color: lightyellow;
   border-width: 4px;
-  margin: 15px;
+  margin: 16px;
   height: 300px;
-  width: 30%;
-  overflow-y:scroll;
-}
-.row {
-  padding: 5px;
-}
-.glyphicon {
-  float: right;
-  margin-left: 10px;
-  font-size: 145%;
-}
-
-#checked {
-  margin-left: 3px;
-  font-size: $font-size;
-
-}
-input[type=checkbox]:checked + label {
-  color:red;
-  text-decoration: line-through;
-}
-header {
-  color: white;
-}
-label {
-  font-size: $font-size;
-  margin-left: 4px;
-}
-
-// .item-name {
-//   font-size: 10px;
-// }
-// .btn-delete {
-//   float: right;
-//
-// }
-.btn-add-item {
-  float: right;
-  margin-top: 2px;
-  margin-right: 1px;
-}
-.list-name {
-  font-size: $font-size;
-  height: 50px;
-  // padding-top: 10px;
-  // margin-bottom: 12px;
-}
-.add-item-form{
-  height: 38px;
-}
-.item-input {
-  width: 88%;
-}
-.item-name {
-  height: 40px;
-}
-.scroll {
+  // float: righ;
+  // clear: both;
+  // height: auto;
+  width: 31%;
   overflow-y:scroll;
 }
 
@@ -87,21 +37,90 @@ label {
   margin-left: 10px;
   float: right;
 }
-
+#btn-account {
+  margin-top: -40px;
+  // vertical-align: middle;
+  float: right;
+}
+.btn-add-item {
+  float: right;
+  margin-top: 2px;
+  margin-right: 1px;
+}
 
 .btn-item, .btn-list {
   float: right;
 }
+
+#checked {
+  margin-left: 3px;
+  font-size: $font-size;
+
+}
+.choose-input {
+  width: 82%;
+  margin-bottom: 7px;
+}
+
 .content {
   margin: auto;
-  width: 102%;
-  // padding: 10px;
+  width: 100%;
+  margin-left: 11px;
+}
+// .glyphicon {
+//   float: right;
+//   margin-left: 10px;
+//   font-size: 145%;
+// }
+
+.create-list-btn {
+margin-left: 19px;
+}
+header {
+  color: white;
+}
+
+input[type=checkbox]:checked + label {
+  color: red;
+  text-decoration: line-through;
+}
+
+// header h4 {
+//   float: right;
+// }
+
+.item-input {
+  width: 88%;
+}
+.item-name {
+  height: 40px;
+  font-size: 15px;
+
+}
+
+label {
+  font-size: $font-size;
+  margin-left: 4px;
+}
+
+
+.list-name {
+  font-size: $font-size;
+  height: 50px;
+    margin-top: -9px;
+  // padding-top: 10px;
+  // margin-bottom: 12px;
 }
 
 p {
   margin: 0 0 10px;
   font-size: 166%;
 }
-.choose-input {
-  width: 82%;
+
+.row {
+  padding: 5px;
+}
+
+.scroll {
+  overflow-y:scroll;
 }
