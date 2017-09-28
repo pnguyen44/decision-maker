@@ -5,9 +5,9 @@
       <!-- <div class="glyphicon glyphicon-pencil"></div>
     <div class="glyphicon glyphicon-trash"></div> -->
       <div class="btn-list">
-      <button type="button" class="btn-edit-list btn-1 btn-warning btn-xs" id="btn-edit-list-name-{{list.name}}" data-list-edit-id="{{list.id}}" data-list-edit-name="{{list.name}}">Edit</button>
+      <button type="button" class="btn-edit-list btn-1 btn-default btn-xs" id="btn-edit-list-name-{{list.name}}" data-list-edit-id="{{list.id}}" data-list-edit-name="{{list.name}}">Edit</button>
 
-      <button type="button" class="btn-delete-list btn-1 btn-danger btn-xs" id="btn-delete-list-{{list.id}}" data-list-delete-id="{{list.id}}">Delete</button>
+      <button type="button" class="btn-delete-list btn-1 btn-danger btn-xs" id="btn-delete-list-{{list.id}}" data-list-delete-id="{{list.id}}">X</button>
     </div>
     <h3>{{list.name}}</h3>
     </div>
@@ -35,8 +35,8 @@
             <input class="checkBox" value='{{item.mark}}' autocomplete="off" data-checkbox-item-id="{{item.id}}" type="checkbox"><label>{{item.name}}</label>
           {{/if}}
         <div class="btn-item">
-        <button type="button" class="btn-edit-item btn-2 btn-warning btn-xs" id="btn-edit-item-{{item.id}}" data-item-edit-id="{{item.id}}" data-item-edit-name="{{item.name}}" data-item-edit-list-id = "{{item.list_id}}" data-item-edit-mark="{{item.mark}}">Edit</button>
-        <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" id="btn-delete-item-{{item.id}}" data-item-delete-id="{{item.id}}">Delete</button>
+        <button type="button" class="btn-edit-item btn-2 btn-default btn-xs" id="btn-edit-item-{{item.id}}" data-item-edit-id="{{item.id}}" data-item-edit-name="{{item.name}}" data-item-edit-list-id = "{{item.list_id}}" data-item-edit-mark="{{item.mark}}">Edit</button>
+        <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" id="btn-delete-item-{{item.id}}" data-item-delete-id="{{item.id}}">X</button>
       </div>
       </div>
       <!-- </div> -->
