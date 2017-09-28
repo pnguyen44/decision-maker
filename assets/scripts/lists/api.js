@@ -36,7 +36,6 @@ const create = function (name) {
   })
 }
 const update = function (name, id) {
-  // id = 9
   return $.ajax({
     url: config.apiOrigin + '/lists/' + id,
     cache: false,

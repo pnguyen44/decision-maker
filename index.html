@@ -9,43 +9,21 @@
   <!-- Do not add `link` tags unless you know what you are doing -->
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-  <!-- <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Fredericka+the+Great" rel="stylesheet"> -->
-  <!-- <link href="https://fonts.googleapis.com/css?family=Dekko" rel="stylesheet"> -->
   <link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
-  <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> -->
-  <!-- <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> -->
-  <!-- Do not add `script` tags unless you know what you are doing -->
-  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+    <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
 </head>
 
 <body class="container-fluid">
-  <!-- <img src="assets/styles/board.jpg"> -->
-  <!-- <div class="header"> -->
-  <!-- <img alt="chalkboard" title = "chalkboard" src = "https://i.imgur.com/6PNntdp.jpg"> -->
-
-  <!-- <div class="welcome-message">Welcome Phuongnhat nguyen</div> -->
-
   <div class="header-message">
-    <!-- <p>Please Log In</p> -->
   </div>
 
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <header>
         <h1>The Decision Maker</h1>
-        <!-- <h4>Please Log In</h4> -->
-      </header>
-
-      <!-- <div class="header-message">
-        <h4>Please Log In</h4>
-      </div> -->
-
-      <div class="navbar-header">
-        <!-- <a class="navbar-brand" href="#">Home</a> -->
-        <!-- <button type="button" class="btn btn-default navbar-btn">Sign Up</button> -->
-        <!-- <button type="button" class="btn btn-default navbar-btn">Log In</button> -->
-      </div>
+          <div class="navbar-header">
+          </div>
 
       <!-- Button trigger modal -->
       <button type="button" id="btn-account" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#account">Account</button>
@@ -76,10 +54,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary pull-right" name="submit" value="Sign Up">Sign Up</button>
               </fieldset>
-              <!-- <button type="button" class="btn btn-primary">Sign Up</button> -->
             </form>
-            <!-- class="password" data-toggle="password" -->
-            <br>
             <form id="sign-in">
               <fieldset>
                 <legend>Sign In</legend>
@@ -91,11 +66,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary pull-right" name="submit" value="Sign In">Sign In</button>
               </fieldset>
-              <!-- <button type="submit" class="btn btn-default">Sign In</button> -->
             </form>
-
-
-
             <form id="change-password">
               <fieldset>
                 <legend>Change Password</legend>
@@ -107,13 +78,11 @@
                 </div>
                 <button type="submit" class="btn btn-primary pull-right" name="submit" value="Change Password!">Change Password</button>
               </fieldset>
-              <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Change Password</button> -->
             </form>
           </div>
           <!-- Modal Footer -->
           <div class="modal-footer">
             <button type="button" class="btn btn-danger" id="btn-sign-out">Sign Out</button>
-            <!-- <button type="button" class="btn btn-close btn-default">Cancel</button> -->
           </div>
         </div>
       </div>
@@ -137,24 +106,13 @@
           </div>
           <div class="modal-body">
             <form id="create-list-form">
-              <!-- <fieldset> -->
-              <!-- <legend>Create List</legend> -->
-              <div class="form-group">
-                <!-- <fieldset> -->
+                <div class="form-group">
                 <input class='create-list form-control' type="text" name="list[name]" placeholder="Name">
-                <!-- </fieldset> -->
               </div>
               <button class='btn btn-primary' type="submit" name="submit">Save List</button>
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </form>
           </div>
-
-
-          <!-- <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" id="btn-save-list">Save List</button>
-          </div> -->
-
         </div>
       </div>
     </div>
@@ -171,12 +129,8 @@
           </div>
           <div class="modal-body">
             <form id="edit-list-form">
-              <!-- <fieldset> -->
-              <!-- <legend>Create List</legend> -->
               <div class="form-group">
-                <!-- <fieldset> -->
                 <input class='edit-list-input form-control' type="text" name="list[name]" placeholder="Name">
-                <!-- </fieldset> -->
               </div>
 
               <button class='btn btn-primary' type="submit" name="submit">Update List</button>
@@ -200,12 +154,8 @@
           </div>
           <div class="modal-body">
             <form id="edit-item-form">
-              <!-- <fieldset> -->
-              <!-- <legend>Create List</legend> -->
               <div class="form-group">
-                <!-- <fieldset> -->
                 <input class='edit-item-input form-control' type="text" name="item[name]" placeholder="Name">
-                <!-- </fieldset> -->
               </div>
 
               <button class='btn btn-primary' type="submit" name="submit">Update Item</button>
@@ -370,7 +320,6 @@
         <div class="list-name" >
           <div class="btn-list">
             <button type="button" class="btn-edit-list btn-1 btn-default btn-xs" >Edit</button>
-
             <button type="button" class="btn-delete-list btn-1 btn-danger btn-xs">X</button>
           </div>
           <h3>List 3</h3>
@@ -384,7 +333,6 @@
           <button type="button" class="btn-add-item btn-success btn-xs" >Add</button>
         </form>
 
-
         <div class="item-name">
           <input class="checkBox" type="checkbox"><label>Item 1</label>
           <div class="btn-item">
@@ -392,7 +340,6 @@
             <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" >X</button>
           </div>
         </div>
-
 
         <div class="item-name">
           <input class="checkBox" id="checked"  autocomplete="off" checked  type="checkbox"><label for='checked'>Item 2</label>

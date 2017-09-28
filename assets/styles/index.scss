@@ -2,10 +2,6 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 $font-size: 96%;
-// $font-family: 'Open Sans', sans-serif;
-// // $font-family: 'Roboto', sans-serif;
-// $font-family: 'Fredericka the Great';
-// $font-family: 'Dekko', cursive;
 $font-family: 'Handlee', cursive;
 
 .add-item-form{
@@ -29,9 +25,6 @@ body {
   border-width: 4px;
   margin: 16px;
   height: 300px;
-  // float: righ;
-  // clear: both;
-  // height: auto;
   width: 31%;
   overflow-y:scroll;
 }
@@ -41,7 +34,6 @@ body {
   width: 15px;
   margin-left: 10px;
   float: right;
-  /* margin-bottom: 4px; */
   margin-top: 10px;
 }
 .btn-2 {
@@ -52,7 +44,6 @@ body {
 }
 #btn-account {
   margin-top: -45px;
-  // vertical-align: middle;
   float: right;
 }
 .btn-add-item {
@@ -82,11 +73,6 @@ body {
   width: 100%;
   margin-left: 11px;
 }
-// .glyphicon {
-//   float: right;
-//   margin-left: 10px;
-//   font-size: 145%;
-// }
 
 .create-list-btn {
 margin-left: 19px;
@@ -99,10 +85,6 @@ input[type=checkbox]:checked + label {
   color: red;
   text-decoration: line-through;
 }
-
-// header h4 {
-//   float: right;
-// }
 
 .item-input {
   width: 88%;
@@ -123,8 +105,6 @@ label {
   font-size: $font-size;
   height: 50px;
     margin-top: -9px;
-  // padding-top: 10px;
-  // margin-bottom: 12px;
 }
 #message-form {
   color: red;
