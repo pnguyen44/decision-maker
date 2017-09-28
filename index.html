@@ -9,7 +9,11 @@
   <!-- Do not add `link` tags unless you know what you are doing -->
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-  <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Fredericka+the+Great" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Fredericka+the+Great" rel="stylesheet"> -->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Dekko" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> -->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> -->
   <!-- Do not add `script` tags unless you know what you are doing -->
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
@@ -23,14 +27,14 @@
   <!-- <div class="welcome-message">Welcome Phuongnhat nguyen</div> -->
 
   <div class="header-message">
-  <!-- <p>Please Log In</p> -->
-</div>
+    <!-- <p>Please Log In</p> -->
+  </div>
 
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <header>
         <h1>The Decision Maker</h1>
-          <!-- <h4>Please Log In</h4> -->
+        <!-- <h4>Please Log In</h4> -->
       </header>
 
       <!-- <div class="header-message">
@@ -52,365 +56,385 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Account</h5>
-          <p id='message-form'></p>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
-              </button>
-        </div>
-        <div class="modal-body">
+            </button>
+          <div class="modal-title" id="exampleModalLabel">Account</div>
+          <div class="modal-body">
+            <div id='message-form'></div>
+            <form id="sign-up" class="hide-signed-in">
+              <fieldset>
+                <legend>Sign up</legend>
+                <div class="break">
+                  <input class="form-control" type="text" name="credentials[email]" placeholder="Email">
+                </div>
+                <div class="break">
+                  <input class="form-control" type="password" name="credentials[password]" placeholder="Password">
+                </div>
+                <div class="break">
+                  <input class="form-control" type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation">
+                </div>
+                <button type="submit" class="btn btn-primary pull-right" name="submit" value="Sign Up">Sign Up</button>
+              </fieldset>
+              <!-- <button type="button" class="btn btn-primary">Sign Up</button> -->
+            </form>
+            <!-- class="password" data-toggle="password" -->
+            <br>
+            <form id="sign-in">
+              <fieldset>
+                <legend>Sign In</legend>
+                <div class="break">
+                  <input class="form-control" type="text" name="credentials[email]" placeholder="Email">
+                </div>
+                <div class="break">
+                  <input class="form-control" type="password" name="credentials[password]" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-primary pull-right" name="submit" value="Sign In">Sign In</button>
+              </fieldset>
+              <!-- <button type="submit" class="btn btn-default">Sign In</button> -->
+            </form>
 
-          <form id="sign-up" class="hide-signed-in">
-            <fieldset>
-              <legend>Sign up</legend>
-              <input class= "control-form" type="text" name="credentials[email]" placeholder="Email">
-              <input type="password" name="credentials[password]" placeholder="Password">
-              <input type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation">
-              <input type="submit" class="button" name="submit" value="Sign Up">
-            </fieldset>
-            <!-- <button type="button" class="btn btn-primary">Sign Up</button> -->
-          </form>
-          <!-- class="password" data-toggle="password" -->
-          <form id="sign-in">
-            <fieldset>
-              <legend>Sign In</legend>
-              <input type="text" name="credentials[email]" placeholder="Email">
-              <input type="password" name="credentials[password]" placeholder="Password">
-              <input type="submit" class="button" name="submit" value="Sign In">
-            </fieldset>
-            <!-- <button type="submit" class="btn btn-default">Sign In</button> -->
-          </form>
 
-          <form id="change-password">
-            <fieldset>
-              <legend>Change Password</legend>
-              <input type="password" name="passwords[old]" placeholder="Old Password">
-              <input type="password" name="passwords[new]" placeholder="New Password">
-              <input type="submit" class="button" name="submit" value="Change Password!">
-            </fieldset>
-            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Change Password</button> -->
-          </form>
-        </div>
-        <!-- Modal Footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primay" id="btn-sign-out">Sign Out</button>
-          <!-- <button type="button" class="btn btn-close">Close</button> -->
+
+            <form id="change-password">
+              <fieldset>
+                <legend>Change Password</legend>
+                <div class="break">
+                  <input class="form-control" type="password" name="passwords[old]" placeholder="Old Password">
+                </div>
+                <div class="break">
+                  <input class="form-control" type="password" name="passwords[new]" placeholder="New Password">
+                </div>
+                <button type="submit" class="btn btn-primary pull-right" name="submit" value="Change Password!">Change Password</button>
+              </fieldset>
+              <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Change Password</button> -->
+            </form>
+          </div>
+          <!-- Modal Footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" id="btn-sign-out">Sign Out</button>
+            <!-- <button type="button" class="btn btn-close btn-default">Cancel</button> -->
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Button trigger create List modal -->
-  <button type="button" class="btn btn-primary create-list-btn" data-toggle="modal" data-target="#create-list">
+    <!-- Button trigger create List modal -->
+    <button type="button" class="btn btn-primary create-list-btn" data-toggle="modal" data-target="#create-list">
       Create List
     </button>
 
-  <!-- Modal create list -->
-  <div class="modal fade" id="create-list" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Create List</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <!-- Modal create list -->
+    <div class="modal fade" id="create-list" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Create List</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
-        </div>
-        <div class="modal-body">
-          <form id="create-list-form">
-            <!-- <fieldset> -->
-            <!-- <legend>Create List</legend> -->
-            <div class="form-group">
+          </div>
+          <div class="modal-body">
+            <form id="create-list-form">
               <!-- <fieldset> -->
-              <input class='create-list' type="text" name="list[name]" placeholder="Name">
-              <!-- </fieldset> -->
-            </div>
-            <button class='btn btn-primary' type="submit" name="submit">Save List</button>
-          </form>
-        </div>
+              <!-- <legend>Create List</legend> -->
+              <div class="form-group">
+                <!-- <fieldset> -->
+                <input class='create-list form-control' type="text" name="list[name]" placeholder="Name">
+                <!-- </fieldset> -->
+              </div>
+              <button class='btn btn-primary' type="submit" name="submit">Save List</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </form>
+          </div>
 
 
-        <!-- <div class="modal-footer">
+          <!-- <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary" id="btn-save-list">Save List</button>
           </div> -->
 
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Modal update list -->
-  <div class="modal fade" id="edit-list" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Edit List</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <!-- Modal update list -->
+    <div class="modal fade" id="edit-list" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Edit List</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
-        </div>
-        <div class="modal-body">
-          <form id="edit-list-form">
-            <!-- <fieldset> -->
-            <!-- <legend>Create List</legend> -->
-            <div class="form-group">
+          </div>
+          <div class="modal-body">
+            <form id="edit-list-form">
               <!-- <fieldset> -->
-              <input class='edit-list-input form-control' type="text" name="list[name]" placeholder="Name">
-              <!-- </fieldset> -->
-            </div>
+              <!-- <legend>Create List</legend> -->
+              <div class="form-group">
+                <!-- <fieldset> -->
+                <input class='edit-list-input form-control' type="text" name="list[name]" placeholder="Name">
+                <!-- </fieldset> -->
+              </div>
 
-            <button class='btn btn-primary' type="submit" name="submit">Update List</button>
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button class='btn btn-primary' type="submit" name="submit">Update List</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
-          </form>
+            </form>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Modal update item -->
-  <div class="modal fade" id="edit-item" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Edit Item</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <!-- Modal update item -->
+    <div class="modal fade" id="edit-item" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Edit Item</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
-        </div>
-        <div class="modal-body">
-          <form id="edit-item-form">
-            <!-- <fieldset> -->
-            <!-- <legend>Create List</legend> -->
-            <div class="form-group">
+          </div>
+          <div class="modal-body">
+            <form id="edit-item-form">
               <!-- <fieldset> -->
-              <input class='edit-item-input form-control' type="text" name="item[name]" placeholder="Name">
-              <!-- </fieldset> -->
-            </div>
+              <!-- <legend>Create List</legend> -->
+              <div class="form-group">
+                <!-- <fieldset> -->
+                <input class='edit-item-input form-control' type="text" name="item[name]" placeholder="Name">
+                <!-- </fieldset> -->
+              </div>
 
-            <button class='btn btn-primary' type="submit" name="submit">Update Item</button>
-            <button type="button p" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button class='btn btn-primary' type="submit" name="submit">Update Item</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
-          </form>
+            </form>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
 
-        <div class="content">
+    <div class="content">
+    </div>
+
+
+    <!-- Example -->
+    <div id="examples">
+      <div class="before-log-in-message col-xs-12">
+        <h1>Please Log In</h1>
+      </div>
+
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 box">
+        <div class="list-name">
+          <div class="btn-list">
+            <button type="button" class="btn-edit-list btn-1 btn-default btn-xs" >Edit</button>
+
+            <button type="button" class="btn-delete-list btn-1 btn-danger btn-xs">X</button>
+          </div>
+          <h3>List 1</h3>
+        </div>
+
+        <input type="text" name="item[name]" class="choose-input" placeholder="">
+        <button type="button" class="btn-choose-item pull-right btn-primary btn-xs" >Decide</button>
+
+        <form class="add-item-form">
+          <input type="text" name="item[name]" class="item-input" placeholder="Enter Item">
+          <button type="button" class="btn-add-item btn-success btn-xs" >Add</button>
+        </form>
+
+
+        <div class="item-name">
+          <input class="checkBox" type="checkbox"><label>Item 1</label>
+          <div class="btn-item">
+            <button type="button" class="btn-edit-item btn-2 btn-default btn-xs" >Edit</button>
+            <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" >X</button>
+          </div>
         </div>
 
 
-<!-- Example -->
-<div id="examples">
-  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 box">
-    <div  class="list-name" id='list-id-{{list.id}}'>
-      <div class="btn-list">
-      <button type="button" class="btn-edit-list btn-1 btn-warning btn-xs" id="btn-edit-list-name-{{list.name}}" data-list-edit-id="{{list.id}}" data-list-edit-name="{{list.name}}">Edit</button>
+        <div class="item-name">
+          <input class="checkBox" id="checked"  autocomplete="off" checked  type="checkbox"><label for='checked'>Item 2</label>
+          <div class="btn-item">
+            <button type="button" class="btn-edit-item btn-2 btn-default btn-xs" >Edit</button>
+            <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" >X</button>
+          </div>
+        </div>
 
-      <button type="button" class="btn-delete-list btn-1 btn-danger btn-xs" id="btn-delete-list-{{list.id}}" data-list-delete-id="{{list.id}}">Delete</button>
-    </div>
-    <h3>List 1</h3>
-  </div>
+        <div class="item-name">
+          <input class="checkBox" id="checked" autocomplete="off" checked  type="checkbox"><label for='checked'>Item 3</label>
+          <div class="btn-item">
+            <button type="button" class="btn-edit-item btn-2 btn-default btn-xs" >Edit</button>
+            <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" >X</button>
+          </div>
+        </div>
 
-    <input type="text" name="item[name]" id='item-choose-list-id-{{list.id}}' class="choose-input" placeholder="">
-      <button type="button" class="btn-choose-item pull-right btn-primary btn-xs" data-choose-item-list-id="{{list.id}}" data-choose-items="{{list.items}}">Decide</button>
+        <div class="item-name">
+          <input class="checkBox" id="checked"  autocomplete="off" checked  type="checkbox"><label for='checked'>Item 4</label>
+          <div class="btn-item">
+            <button type="button" class="btn-edit-item btn-2 btn-default btn-xs" >Edit</button>
+            <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" >X</button>
+          </div>
+        </div>
 
-  <form class="add-item-form">
-    <input type="text" name="item[name]" class"" id='item-name-list-id-{{list.id}}' class="item-input" placeholder="Enter Item">
-      <button type="button" class="btn-add-item btn-success btn-xs" data-item-name-list-id="{{list.id}}">Add</button>
-  </form>
+        <div class="item-name">
+          <input class="checkBox" id="checked"  autocomplete="off" checked  type="checkbox"><label for='checked'>Item 5</label>
+          <div class="btn-item">
+            <button type="button" class="btn-edit-item btn-2 btn-default btn-xs" >Edit</button>
+            <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" >X</button>
+          </div>
+        </div>
 
+        <div class="item-name">
+          <input class="checkBox" id="checked"  autocomplete="off" checked  type="checkbox"><label for='checked'>Item 6</label>
+          <div class="btn-item">
+            <button type="button" class="btn-edit-item btn-2 btn-default btn-xs" >Edit</button>
+            <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" >X</button>
+          </div>
+        </div>
+      </div>
 
-    <div class="item-name">
-      <input class="checkBox" value='{{item.mark}}' autocomplete="off" data-checkbox-item-id="{{item.id}}" type="checkbox"><label>Item 1</label>
-      <div class="btn-item">
-      <button type="button" class="btn-edit-item btn-2 btn-warning btn-xs" id="btn-edit-item-{{item.id}}" data-item-edit-id="{{item.id}}" data-item-edit-name="{{item.name}}" data-item-edit-list-id = "{{item.list_id}}" data-item-edit-mark="{{item.mark}}">Edit</button>
-      <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" id="btn-delete-item-{{item.id}}" data-item-delete-id="{{item.id}}">Delete</button>
-    </div>
-    </div>
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 box">
+        <div class="list-name" >
+          <div class="btn-list">
+            <button type="button" class="btn-edit-list btn-1 btn-default btn-xs" >Edit</button>
 
+            <button type="button" class="btn-delete-list btn-1 btn-danger btn-xs">X</button>
+          </div>
+          <h3>List 2</h3>
+        </div>
 
-    <div class="item-name">
-          <input class="checkBox" id="checked" value='{{item.mark}}' autoc omplete="off" checked data-checkbox-item-id="{{item.id}}" data-item-name-id="{{item.name}}" data-list-id='{{item.list_id}}' type="checkbox"><label for='checked'>Item 2</label>
-      <div class="btn-item">
-      <button type="button" class="btn-edit-item btn-2 btn-warning btn-xs" id="btn-edit-item-{{item.id}}" data-item-edit-id="{{item.id}}" data-item-edit-name="{{item.name}}" data-item-edit-list-id = "{{item.list_id}}" data-item-edit-mark="{{item.mark}}">Edit</button>
-      <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" id="btn-delete-item-{{item.id}}" data-item-delete-id="{{item.id}}">Delete</button>
-    </div>
-    </div>
+        <input type="text" name="item[name]" class="choose-input" placeholder="">
+        <button type="button" class="btn-choose-item pull-right btn-primary btn-xs">Decide</button>
 
-    <div class="item-name">
-          <input class="checkBox" id="checked" value='{{item.mark}}' autoc omplete="off" checked data-checkbox-item-id="{{item.id}}" data-item-name-id="{{item.name}}" data-list-id='{{item.list_id}}' type="checkbox"><label for='checked'>Item 3</label>
-      <div class="btn-item">
-      <button type="button" class="btn-edit-item btn-2 btn-warning btn-xs" id="btn-edit-item-{{item.id}}" data-item-edit-id="{{item.id}}" data-item-edit-name="{{item.name}}" data-item-edit-list-id = "{{item.list_id}}" data-item-edit-mark="{{item.mark}}">Edit</button>
-      <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" id="btn-delete-item-{{item.id}}" data-item-delete-id="{{item.id}}">Delete</button>
-    </div>
-    </div>
-
-    <div class="item-name">
-          <input class="checkBox" id="checked" value='{{item.mark}}' autoc omplete="off" checked data-checkbox-item-id="{{item.id}}" data-item-name-id="{{item.name}}" data-list-id='{{item.list_id}}' type="checkbox"><label for='checked'>Item 4</label>
-      <div class="btn-item">
-      <button type="button" class="btn-edit-item btn-2 btn-warning btn-xs" id="btn-edit-item-{{item.id}}" data-item-edit-id="{{item.id}}" data-item-edit-name="{{item.name}}" data-item-edit-list-id = "{{item.list_id}}" data-item-edit-mark="{{item.mark}}">Edit</button>
-      <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" id="btn-delete-item-{{item.id}}" data-item-delete-id="{{item.id}}">Delete</button>
-    </div>
-    </div>
-
-    <div class="item-name">
-          <input class="checkBox" id="checked" value='{{item.mark}}' autoc omplete="off" checked data-checkbox-item-id="{{item.id}}" data-item-name-id="{{item.name}}" data-list-id='{{item.list_id}}' type="checkbox"><label for='checked'>Item 5</label>
-      <div class="btn-item">
-      <button type="button" class="btn-edit-item btn-2 btn-warning btn-xs" id="btn-edit-item-{{item.id}}" data-item-edit-id="{{item.id}}" data-item-edit-name="{{item.name}}" data-item-edit-list-id = "{{item.list_id}}" data-item-edit-mark="{{item.mark}}">Edit</button>
-      <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" id="btn-delete-item-{{item.id}}" data-item-delete-id="{{item.id}}">Delete</button>
-    </div>
-    </div>
-
-    <div class="item-name">
-          <input class="checkBox" id="checked" value='{{item.mark}}' autoc omplete="off" checked data-checkbox-item-id="{{item.id}}" data-item-name-id="{{item.name}}" data-list-id='{{item.list_id}}' type="checkbox"><label for='checked'>Item 6</label>
-      <div class="btn-item">
-      <button type="button" class="btn-edit-item btn-2 btn-warning btn-xs" id="btn-edit-item-{{item.id}}" data-item-edit-id="{{item.id}}" data-item-edit-name="{{item.name}}" data-item-edit-list-id = "{{item.list_id}}" data-item-edit-mark="{{item.mark}}">Edit</button>
-      <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" id="btn-delete-item-{{item.id}}" data-item-delete-id="{{item.id}}">Delete</button>
-    </div>
-    </div>
-  </div>
-
-  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 box">
-    <div  class="list-name" id='list-id-{{list.id}}'>
-      <div class="btn-list">
-      <button type="button" class="btn-edit-list btn-1 btn-warning btn-xs" id="btn-edit-list-name-{{list.name}}" data-list-edit-id="{{list.id}}" data-list-edit-name="{{list.name}}">Edit</button>
-
-      <button type="button" class="btn-delete-list btn-1 btn-danger btn-xs" id="btn-delete-list-{{list.id}}" data-list-delete-id="{{list.id}}">Delete</button>
-    </div>
-    <h3>List 1</h3>
-  </div>
-
-    <input type="text" name="item[name]" id='item-choose-list-id-{{list.id}}' class="choose-input" placeholder="">
-      <button type="button" class="btn-choose-item pull-right btn-primary btn-xs" data-choose-item-list-id="{{list.id}}" data-choose-items="{{list.items}}">Decide</button>
-
-  <form class="add-item-form">
-    <input type="text" name="item[name]" class"" id='item-name-list-id-{{list.id}}' class="item-input" placeholder="Enter Item">
-      <button type="button" class="btn-add-item btn-success btn-xs" data-item-name-list-id="{{list.id}}">Add</button>
-  </form>
+        <form class="add-item-form">
+          <input type="text" name="item[name]" class="item-input" placeholder="Enter Item">
+          <button type="button" class="btn-add-item btn-success btn-xs" >Add</button>
+        </form>
 
 
-    <div class="item-name">
-      <input class="checkBox" value='{{item.mark}}' autocomplete="off" data-checkbox-item-id="{{item.id}}" type="checkbox"><label>Item 1</label>
-      <div class="btn-item">
-      <button type="button" class="btn-edit-item btn-2 btn-warning btn-xs" id="btn-edit-item-{{item.id}}" data-item-edit-id="{{item.id}}" data-item-edit-name="{{item.name}}" data-item-edit-list-id = "{{item.list_id}}" data-item-edit-mark="{{item.mark}}">Edit</button>
-      <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" id="btn-delete-item-{{item.id}}" data-item-delete-id="{{item.id}}">Delete</button>
-    </div>
-    </div>
+        <div class="item-name">
+          <input class="checkBox" type="checkbox"><label>Item 1</label>
+          <div class="btn-item">
+            <button type="button" class="btn-edit-item btn-2 btn-default btn-xs" >Edit</button>
+            <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" >X</button>
+          </div>
+        </div>
 
 
-    <div class="item-name">
-          <input class="checkBox" id="checked" value='{{item.mark}}' autoc omplete="off" checked data-checkbox-item-id="{{item.id}}" data-item-name-id="{{item.name}}" data-list-id='{{item.list_id}}' type="checkbox"><label for='checked'>Item 2</label>
-      <div class="btn-item">
-      <button type="button" class="btn-edit-item btn-2 btn-warning btn-xs" id="btn-edit-item-{{item.id}}" data-item-edit-id="{{item.id}}" data-item-edit-name="{{item.name}}" data-item-edit-list-id = "{{item.list_id}}" data-item-edit-mark="{{item.mark}}">Edit</button>
-      <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" id="btn-delete-item-{{item.id}}" data-item-delete-id="{{item.id}}">Delete</button>
-    </div>
-    </div>
+        <div class="item-name">
+          <input class="checkBox" id="checked"  autocomplete="off" checked  type="checkbox"><label for='checked'>Item 2</label>
+          <div class="btn-item">
+            <button type="button" class="btn-edit-item btn-2 btn-default btn-xs" >Edit</button>
+            <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" >X</button>
+          </div>
+        </div>
 
-    <div class="item-name">
-          <input class="checkBox" id="checked" value='{{item.mark}}' autoc omplete="off" checked data-checkbox-item-id="{{item.id}}" data-item-name-id="{{item.name}}" data-list-id='{{item.list_id}}' type="checkbox"><label for='checked'>Item 3</label>
-      <div class="btn-item">
-      <button type="button" class="btn-edit-item btn-2 btn-warning btn-xs" id="btn-edit-item-{{item.id}}" data-item-edit-id="{{item.id}}" data-item-edit-name="{{item.name}}" data-item-edit-list-id = "{{item.list_id}}" data-item-edit-mark="{{item.mark}}">Edit</button>
-      <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" id="btn-delete-item-{{item.id}}" data-item-delete-id="{{item.id}}">Delete</button>
-    </div>
-    </div>
+        <div class="item-name">
+          <input class="checkBox" id="checked"  autocomplete="off" checked  type="checkbox"><label for='checked'>Item 3</label>
+          <div class="btn-item">
+            <button type="button" class="btn-edit-item btn-2 btn-default btn-xs" >Edit</button>
+            <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" >X</button>
+          </div>
+        </div>
 
-    <div class="item-name">
-          <input class="checkBox" id="checked" value='{{item.mark}}' autoc omplete="off" checked data-checkbox-item-id="{{item.id}}" data-item-name-id="{{item.name}}" data-list-id='{{item.list_id}}' type="checkbox"><label for='checked'>Item 4</label>
-      <div class="btn-item">
-      <button type="button" class="btn-edit-item btn-2 btn-warning btn-xs" id="btn-edit-item-{{item.id}}" data-item-edit-id="{{item.id}}" data-item-edit-name="{{item.name}}" data-item-edit-list-id = "{{item.list_id}}" data-item-edit-mark="{{item.mark}}">Edit</button>
-      <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" id="btn-delete-item-{{item.id}}" data-item-delete-id="{{item.id}}">Delete</button>
-    </div>
-    </div>
+        <div class="item-name">
+          <input class="checkBox" id="checked"  autocomplete="off" checked  type="checkbox"><label for='checked'>Item 4</label>
+          <div class="btn-item">
+            <button type="button" class="btn-edit-item btn-2 btn-default btn-xs" >Edit</button>
+            <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" >X</button>
+          </div>
+        </div>
 
-    <div class="item-name">
-          <input class="checkBox" id="checked" value='{{item.mark}}' autoc omplete="off" checked data-checkbox-item-id="{{item.id}}" data-item-name-id="{{item.name}}" data-list-id='{{item.list_id}}' type="checkbox"><label for='checked'>Item 5</label>
-      <div class="btn-item">
-      <button type="button" class="btn-edit-item btn-2 btn-warning btn-xs" id="btn-edit-item-{{item.id}}" data-item-edit-id="{{item.id}}" data-item-edit-name="{{item.name}}" data-item-edit-list-id = "{{item.list_id}}" data-item-edit-mark="{{item.mark}}">Edit</button>
-      <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" id="btn-delete-item-{{item.id}}" data-item-delete-id="{{item.id}}">Delete</button>
-    </div>
-    </div>
+        <div class="item-name">
+          <input class="checkBox" id="checked"  autocomplete="off" checked  type="checkbox"><label for='checked'>Item 5</label>
+          <div class="btn-item">
+            <button type="button" class="btn-edit-item btn-2 btn-default btn-xs" >Edit</button>
+            <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" >X</button>
+          </div>
+        </div>
 
-    <div class="item-name">
-          <input class="checkBox" id="checked" value='{{item.mark}}' autoc omplete="off" checked data-checkbox-item-id="{{item.id}}" data-item-name-id="{{item.name}}" data-list-id='{{item.list_id}}' type="checkbox"><label for='checked'>Item 6</label>
-      <div class="btn-item">
-      <button type="button" class="btn-edit-item btn-2 btn-warning btn-xs" id="btn-edit-item-{{item.id}}" data-item-edit-id="{{item.id}}" data-item-edit-name="{{item.name}}" data-item-edit-list-id = "{{item.list_id}}" data-item-edit-mark="{{item.mark}}">Edit</button>
-      <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" id="btn-delete-item-{{item.id}}" data-item-delete-id="{{item.id}}">Delete</button>
-    </div>
-    </div>
-  </div>
+        <div class="item-name">
+          <input class="checkBox" id="checked"  autocomplete="off" checked  type="checkbox"><label for='checked'>Item 6</label>
+          <div class="btn-item">
+            <button type="button" class="btn-edit-item btn-2 btn-default btn-xs" >Edit</button>
+            <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" >X</button>
+          </div>
+        </div>
+      </div>
 
-  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 box">
-    <div  class="list-name" id='list-id-{{list.id}}'>
-      <div class="btn-list">
-      <button type="button" class="btn-edit-list btn-1 btn-warning btn-xs" id="btn-edit-list-name-{{list.name}}" data-list-edit-id="{{list.id}}" data-list-edit-name="{{list.name}}">Edit</button>
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 box">
+        <div class="list-name" >
+          <div class="btn-list">
+            <button type="button" class="btn-edit-list btn-1 btn-default btn-xs" >Edit</button>
 
-      <button type="button" class="btn-delete-list btn-1 btn-danger btn-xs" id="btn-delete-list-{{list.id}}" data-list-delete-id="{{list.id}}">Delete</button>
-    </div>
-    <h3>List 1</h3>
-  </div>
+            <button type="button" class="btn-delete-list btn-1 btn-danger btn-xs">X</button>
+          </div>
+          <h3>List 3</h3>
+        </div>
 
-    <input type="text" name="item[name]" id='item-choose-list-id-{{list.id}}' class="choose-input" placeholder="">
-      <button type="button" class="btn-choose-item pull-right btn-primary btn-xs" data-choose-item-list-id="{{list.id}}" data-choose-items="{{list.items}}">Decide</button>
+        <input type="text" name="item[name]" class="choose-input" placeholder="">
+        <button type="button" class="btn-choose-item pull-right btn-primary btn-xs" >Decide</button>
 
-  <form class="add-item-form">
-    <input type="text" name="item[name]" class"" id='item-name-list-id-{{list.id}}' class="item-input" placeholder="Enter Item">
-      <button type="button" class="btn-add-item btn-success btn-xs" data-item-name-list-id="{{list.id}}">Add</button>
-  </form>
-
-
-    <div class="item-name">
-      <input class="checkBox" value='{{item.mark}}' autocomplete="off" data-checkbox-item-id="{{item.id}}" type="checkbox"><label>Item 1</label>
-      <div class="btn-item">
-      <button type="button" class="btn-edit-item btn-2 btn-warning btn-xs" id="btn-edit-item-{{item.id}}" data-item-edit-id="{{item.id}}" data-item-edit-name="{{item.name}}" data-item-edit-list-id = "{{item.list_id}}" data-item-edit-mark="{{item.mark}}">Edit</button>
-      <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" id="btn-delete-item-{{item.id}}" data-item-delete-id="{{item.id}}">Delete</button>
-    </div>
-    </div>
+        <form class="add-item-form">
+          <input type="text" name="item[name]" class="item-input" placeholder="Enter Item">
+          <button type="button" class="btn-add-item btn-success btn-xs" >Add</button>
+        </form>
 
 
-    <div class="item-name">
-          <input class="checkBox" id="checked" value='{{item.mark}}' autoc omplete="off" checked data-checkbox-item-id="{{item.id}}" data-item-name-id="{{item.name}}" data-list-id='{{item.list_id}}' type="checkbox"><label for='checked'>Item 2</label>
-      <div class="btn-item">
-      <button type="button" class="btn-edit-item btn-2 btn-warning btn-xs" id="btn-edit-item-{{item.id}}" data-item-edit-id="{{item.id}}" data-item-edit-name="{{item.name}}" data-item-edit-list-id = "{{item.list_id}}" data-item-edit-mark="{{item.mark}}">Edit</button>
-      <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" id="btn-delete-item-{{item.id}}" data-item-delete-id="{{item.id}}">Delete</button>
-    </div>
-    </div>
+        <div class="item-name">
+          <input class="checkBox" type="checkbox"><label>Item 1</label>
+          <div class="btn-item">
+            <button type="button" class="btn-edit-item btn-2 btn-default btn-xs" >Edit</button>
+            <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" >X</button>
+          </div>
+        </div>
 
-    <div class="item-name">
-          <input class="checkBox" id="checked" value='{{item.mark}}' autoc omplete="off" checked data-checkbox-item-id="{{item.id}}" data-item-name-id="{{item.name}}" data-list-id='{{item.list_id}}' type="checkbox"><label for='checked'>Item 3</label>
-      <div class="btn-item">
-      <button type="button" class="btn-edit-item btn-2 btn-warning btn-xs" id="btn-edit-item-{{item.id}}" data-item-edit-id="{{item.id}}" data-item-edit-name="{{item.name}}" data-item-edit-list-id = "{{item.list_id}}" data-item-edit-mark="{{item.mark}}">Edit</button>
-      <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" id="btn-delete-item-{{item.id}}" data-item-delete-id="{{item.id}}">Delete</button>
-    </div>
-    </div>
 
-    <div class="item-name">
-          <input class="checkBox" id="checked" value='{{item.mark}}' autoc omplete="off" checked data-checkbox-item-id="{{item.id}}" data-item-name-id="{{item.name}}" data-list-id='{{item.list_id}}' type="checkbox"><label for='checked'>Item 4</label>
-      <div class="btn-item">
-      <button type="button" class="btn-edit-item btn-2 btn-warning btn-xs" id="btn-edit-item-{{item.id}}" data-item-edit-id="{{item.id}}" data-item-edit-name="{{item.name}}" data-item-edit-list-id = "{{item.list_id}}" data-item-edit-mark="{{item.mark}}">Edit</button>
-      <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" id="btn-delete-item-{{item.id}}" data-item-delete-id="{{item.id}}">Delete</button>
-    </div>
-    </div>
+        <div class="item-name">
+          <input class="checkBox" id="checked"  autocomplete="off" checked  type="checkbox"><label for='checked'>Item 2</label>
+          <div class="btn-item">
+            <button type="button" class="btn-edit-item btn-2 btn-default btn-xs" >Edit</button>
+            <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" >X</button>
+          </div>
+        </div>
 
-    <div class="item-name">
-          <input class="checkBox" id="checked" value='{{item.mark}}' autoc omplete="off" checked data-checkbox-item-id="{{item.id}}" data-item-name-id="{{item.name}}" data-list-id='{{item.list_id}}' type="checkbox"><label for='checked'>Item 5</label>
-      <div class="btn-item">
-      <button type="button" class="btn-edit-item btn-2 btn-warning btn-xs" id="btn-edit-item-{{item.id}}" data-item-edit-id="{{item.id}}" data-item-edit-name="{{item.name}}" data-item-edit-list-id = "{{item.list_id}}" data-item-edit-mark="{{item.mark}}">Edit</button>
-      <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" id="btn-delete-item-{{item.id}}" data-item-delete-id="{{item.id}}">Delete</button>
-    </div>
-    </div>
+        <div class="item-name">
+          <input class="checkBox" id="checked"  autocomplete="off" checked  type="checkbox"><label for='checked'>Item 3</label>
+          <div class="btn-item">
+            <button type="button" class="btn-edit-item btn-2 btn-default btn-xs" >Edit</button>
+            <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" >X</button>
+          </div>
+        </div>
 
-    <div class="item-name">
-          <input class="checkBox" id="checked" value='{{item.mark}}' autoc omplete="off" checked data-checkbox-item-id="{{item.id}}" data-item-name-id="{{item.name}}" data-list-id='{{item.list_id}}' type="checkbox"><label for='checked'>Item 6</label>
-      <div class="btn-item">
-      <button type="button" class="btn-edit-item btn-2 btn-warning btn-xs" id="btn-edit-item-{{item.id}}" data-item-edit-id="{{item.id}}" data-item-edit-name="{{item.name}}" data-item-edit-list-id = "{{item.list_id}}" data-item-edit-mark="{{item.mark}}">Edit</button>
-      <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" id="btn-delete-item-{{item.id}}" data-item-delete-id="{{item.id}}">Delete</button>
-    </div>
-    </div>
-  </div>
-</div>
+        <div class="item-name">
+          <input class="checkBox" id="checked"  autocomplete="off" checked  type="checkbox"><label for='checked'>Item 4</label>
+          <div class="btn-item">
+            <button type="button" class="btn-edit-item btn-2 btn-default btn-xs" >Edit</button>
+            <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" >X</button>
+          </div>
+        </div>
 
+        <div class="item-name">
+          <input class="checkBox" id="checked"  autocomplete="off" checked  type="checkbox"><label for='checked'>Item 5</label>
+          <div class="btn-item">
+            <button type="button" class="btn-edit-item btn-2 btn-default btn-xs" >Edit</button>
+            <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" >X</button>
+          </div>
+        </div>
+
+        <div class="item-name">
+          <input class="checkBox" id="checked"  autocomplete="off" checked  type="checkbox"><label for='checked'>Item 6</label>
+          <div class="btn-item">
+            <button type="button" class="btn-edit-item btn-2 btn-default btn-xs" >Edit</button>
+            <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" >X</button>
+          </div>
+        </div>
+      </div>
+    </div>
 </body>
 
 </html>
