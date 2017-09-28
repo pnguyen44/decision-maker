@@ -17,6 +17,10 @@ The Decision-Maker app was created using HTML, Ruby on Rails, CSS/SASS, jQuery, 
 
 https://i.imgur.com/HODHxDB.jpg
 
+# Back-end Repo
+
+https://github.com/pnguyen44/decision-maker-back-end
+
 # Creation Process
 
  The first thing I did was create a user story and wireframe to map out my decision-maker app. Afterward I created the model for the List and Item and added their relationship association with each other, as well the User model. In addition, I updated the controller and serializers and wrote curl scripts. When I finished developing the back-end code, I wrote the html and css for the the front-end. I used JQuery and Javascript to create functions in the front end.
