@@ -6,6 +6,7 @@ const listsEvents = require('./events')
 const itemsEvents = require('../items/events')
 const listsApi = require('./api')
 const listsUi = require('./ui')
+const app = require('../app')
 // const itemsApi = require('../items/api')
 const showListsTemplate = require('../templates/list-listing.handlebars')
 const onSuccess = function (data) {
@@ -81,7 +82,7 @@ const onCreateSuccess = function (data) {
 
 const getListsSuccess = function (data) {
   store.lists = data.lists
-  console.log('getListSuccess, data.lists=', data.lists)
+  console.log('getListsSuccess, data.lists=', data.lists)
   const showListsHTML = showListsTemplate({lists: data.lists})
   $('.content').html(showListsHTML)
   $('.content').show()
@@ -167,29 +168,31 @@ const getListsSuccess = function (data) {
   // //   // console.log('edit-list-btn')
     $('.edit-item-input').val(store.editItemName)
     $('#edit-item').modal('show')
-  //   $('#edit-list-form').on('submit', function (e) {
-  //     e.preventDefault()
-  //     const updatedName = $('.edit-list-input').val()
-  //     clearForm()
-  //     listsEvents.onUpdateList(updatedName, listId)
-  //   })
-  //
   })
-  // $('#add-item-form').on('submit', itemsEvents.onCreateItem)
+
+$('.btn-choose-item').on('click', function () {
+    store.chooseItemListId = $(this).attr('data-choose-item-list-id')
+    console.log('store.chooseItemListId=', store.chooseItemListId)
+      listsEvents.getOneList(store.chooseItemListId)
+    // listsApi.show(store.chooseItemListId)
+    //   .then(getOneListSuccess(data))
+    //   .then(app.chooseItem(data.list.items))
+    //   .then(console.log('result =', data.list.items))
+    //   .catch(onError())
+
+})
   console.log('on getListsSuccess store.lists =', store.lists)
   // console.log('isNewUser =', store.isNewUser)
 }
 
 const getOneListSuccess = function (data) {
   store.list = data.list
+  store.items = data.list.items
   // store.listId = data.list.id
-  console.log('getOneListSuccess store.list =', store.list)
-  // game.getLastGame()
-  // if (store.game.over === false) {
-  //   game.displayLastGame()
-  // } else {
-  //   listsEvents.onCreateGame()
-  // }
+  console.log('data.list.items=', data.list.items)
+  console.log('getOneListSuccess store.list.item =', data.list)
+  app.chooseItem(store.list.items)
+
 }
 
 const onUpdateSuccess = function () {

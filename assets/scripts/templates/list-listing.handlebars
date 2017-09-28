@@ -12,10 +12,18 @@
     </div>
 
 
+    <!-- <form class="add-item-form"> -->
+
+      <input type="text" name="item[name]" id='item-choose-list-id-{{list.id}}' class="choose-input" placeholder="">
+        <button type="button" class="btn-choose-item" data-choose-item-list-id="{{list.id}}" data-choose-items="{{list.items}}">Choose</button>
+    <!-- </form> -->
+
     <form class="add-item-form">
+    <!-- <div class='choose'> -->
       <input type="text" name="item[name]" id='item-name-list-id-{{list.id}}' class="item-input" placeholder="Enter Item">
-<button type="button" class="btn-add-item" data-item-name-list-id="{{list.id}}">Add</button>
-</form>
+        <button type="button" class="btn-add-item" data-item-name-list-id="{{list.id}}">Add</button>
+    <!-- </div> -->
+    </form>
 
 
 {{#each list.items as |item|}}
