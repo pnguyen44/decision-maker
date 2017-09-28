@@ -46,13 +46,13 @@ const changePasswordSuccess = (data) => {
   clearForm()
   $('#sign-out').show()
   $('#message-form').html('Successfully changed password')
-  $('#account').modal('hide')
+  // $('#account').modal('hide')
 }
 
 const changePasswordFailure = (error) => {
   console.log(error)
   console.log('error on change password')
-  $('#message-form').text('Error on change password')
+  $('#message-form').html('Error on change password')
   clearForm()
 }
 const signOutSuccess = function (data) {
@@ -69,7 +69,7 @@ const signOutSuccess = function (data) {
 const signOutFailure = function (error) {
   console.log(error)
   console.log('error on sign out')
-  $('#message-form').text('Error on sign out')
+  $('#message-form').html('Error on sign out')
   $('#sign-out').hide()
 }
 const clearForm = function () {
