@@ -21,7 +21,6 @@ const chooseItem = function (items) {
   const choosenItem = unMarkedItems[itemPosition - 1].name
   console.log('itemChoosen  =', choosenItem)
   $('#item-choose-list-id-' + store.chooseItemListId).val(choosenItem)
-
 }
 
 module.exports = {
