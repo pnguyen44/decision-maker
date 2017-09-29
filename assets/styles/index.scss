@@ -121,6 +121,13 @@ p {
   padding: 5px;
 }
 
+.samples{
+  content: url('https://i.imgur.com/TX1LV9H.png');
+  // content: url('./image/sample-lists.png');
+
+
+  width: 100%;
+}
 .scroll {
   overflow-y:scroll;
 }
