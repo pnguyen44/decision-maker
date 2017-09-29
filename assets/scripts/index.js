@@ -9,12 +9,14 @@ const itemEvents = require('./items/events')
 
 $(() => {
   setAPIOrigin(location, config)
+
   store.isSignedIn = false
   $('.create-list-btn').hide()
-
-  authEvents.addHandlers()
   listEvents.addHandlers()
   itemEvents.addHandlers()
+  authEvents.addHandlers()
+  $('#examples').show()
+
   $('#btn-account').on('click', function () {
     $('#message-form').text('')
     if (store.isSignedIn === true) {
@@ -32,5 +34,4 @@ $(() => {
       $('#btn-sign-out').hide()
     }
   })
-
 })
