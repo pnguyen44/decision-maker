@@ -16,11 +16,13 @@ const signInSuccess = function (data) {
   store.token = data.user.token
   store.isSignedIn = true
   clearForm()
+  $('#examples').hide()
+
+  $('.content').css('display', 'none')
   $('#message-form').html('Successfully signed in')
   $('#account').modal('hide')
   listEvents.getLists()
   $('.create-list-btn').show()
-  $('#examples').hide()
 }
 const signInFailure = function (error) {
   console.error(error)
@@ -51,6 +53,7 @@ const signOutSuccess = function (data) {
 const signOutFailure = function () {
   $('#message-form').html('Error on sign out')
   $('#sign-out').hide()
+  $('#examples').show()
 }
 const clearForm = function () {
   $('form').trigger('reset')
