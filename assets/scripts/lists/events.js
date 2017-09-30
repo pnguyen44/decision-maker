@@ -37,6 +37,27 @@ const onDeleteList = function (id) {
     .catch(listsUi.onError)
 }
 
+const deleteListClickHander = function () {
+  $('.btn-delete-list').on('click', function () {
+    if (store.isSignedIn === true) {
+      const listId = $(this).attr('data-list-delete-id')
+      onDeleteList(listId)
+    }
+  })
+}
+
+const editListClickHander = function () {
+  $('.btn-edit-list').on('click', function () {
+    if (store.isSignedIn === true) {
+      const listId = $(this).attr('data-list-edit-id')
+      store.listId = listId
+      const listName = $(this).attr('data-list-edit-name')
+      $('.edit-list-input').val(listName)
+      $('#edit-list').modal('show')
+    }
+  })
+}
+
 const addHandlers = function () {
   $('#create-list-form').on('submit', onCreateList)
   $('#edit-list-form').on('submit', function (e) {
@@ -56,3 +77,5 @@ exports.getLists = getLists
 exports.addHandlers = addHandlers
 exports.onDeleteList = onDeleteList
 exports.updateList = updateList
+exports.deleteListClickHander = deleteListClickHander
+exports.editListClickHander = editListClickHander

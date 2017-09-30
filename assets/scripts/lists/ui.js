@@ -27,75 +27,23 @@ const getListsSuccess = function (data) {
     e.preventDefault()
   })
 
-  $('.btn-add-item').on('click', function (e) {
-    e.preventDefault()
-    if (store.isSignedIn === true) {
-      const listId = $(this).attr('data-item-name-list-id')
-      const inputBox = `#item-name-list-id-${listId}`
-      const itemName = String($(inputBox).val())
-      $(inputBox).val('')
-      if (itemName.trim().length > 0) {
-        itemsEvents.createOneItem(itemName, false, listId)
-      }
-    }
-  })
-
-  $('.btn-delete-item').on('click', function () {
-    if (store.isSignedIn === true) {
-      const itemId = $(this).attr('data-item-delete-id')
-      itemsEvents.onDeleteItem(itemId)
-    }
-  })
-
-  $('.btn-delete-list').on('click', function () {
-    if (store.isSignedIn === true) {
-      const listId = $(this).attr('data-list-delete-id')
-      listsEvents.onDeleteList(listId)
-    }
-  })
-
-  $('.checkBox').on('click', function () {
-    if (store.isSignedIn === true) {
-      const mark = $(this).is(':checked')
-      const itemName = $(this).attr('data-item-name-id')
-      const itemId = $(this).attr('data-checkbox-item-id')
-      const listId = $(this).attr('data-list-id')
-      // const value = $(this).val()
-      itemsEvents.onUpdateItem(itemName, mark, itemId, listId)
-    }
-  })
-  $('.btn-edit-list').on('click', function () {
-    if (store.isSignedIn === true) {
-      const listId = $(this).attr('data-list-edit-id')
-      store.listId = listId
-      const listName = $(this).attr('data-list-edit-name')
-      $('.edit-list-input').val(listName)
-      $('#edit-list').modal('show')
-    }
-  })
-  $('.btn-edit-item').on('click', function () {
-    if (store.isSignedIn === true) {
-      store.editItemId = $(this).attr('data-item-edit-id')
-      store.editItemName = $(this).attr('data-item-edit-name')
-      store.editItemlistId = $(this).attr('data-item-edit-list-id')
-      store.editItemMark = $(this).attr('data-item-edit-mark')
-
-      $('.edit-item-input').val(store.editItemName)
-      $('#edit-item').modal('show')
-    }
-  })
-  $('.btn-choose-item').on('click', function () {
-    if (store.isSignedIn === true) {
-      store.chooseItemListId = $(this).attr('data-choose-item-list-id')
-      listsEvents.getOneList(store.chooseItemListId)
-    }
-  })
+  itemsEvents.addItemClickHandler()
+  itemsEvents.deleteItemClickHander()
+  listsEvents.deleteListClickHander()
+  itemsEvents.checkBoxClickHander()
+  listsEvents.editListClickHander()
+  itemsEvents.editItemClickHandler()
+  itemsEvents.chooseItemClickHandler()
 }
 
 const getOneListSuccess = function (data) {
   store.list = data.list
   store.items = data.list.items
-  itemsEvents.onChooseItem(store.list.items)
+  if (store.items.length > 0) {
+    itemsEvents.onChooseItem(store.list.items)
+  } else {
+    $('#item-choose-list-id-' + store.chooseItemListId).text('')
+  }
 }
 
 const onUpdateSuccess = function () {

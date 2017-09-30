@@ -2,6 +2,7 @@
 const itemsApi = require('./api')
 const itemsUi = require('./ui')
 const getFormFields = require('../../../lib/get-form-fields')
+const listsEvents = require('../lists/events')
 
 const store = require('../store')
 
@@ -48,14 +49,72 @@ const onChooseItem = function (items) {
   const unMarkedItems = items.filter((items) => {
     return items.mark === false
   })
-
   const numOfItems = unMarkedItems.length
-
   if (numOfItems > 0) {
     const itemPosition = Math.floor(Math.random() * numOfItems) + 1
     const choosenItem = unMarkedItems[itemPosition - 1].name
     $('#item-choose-list-id-' + store.chooseItemListId).text(choosenItem)
   }
+}
+
+const editItemClickHandler = function () {
+  $('.btn-edit-item').on('click', function () {
+    if (store.isSignedIn === true) {
+      store.editItemId = $(this).attr('data-item-edit-id')
+      store.editItemName = $(this).attr('data-item-edit-name')
+      store.editItemlistId = $(this).attr('data-item-edit-list-id')
+      store.editItemMark = $(this).attr('data-item-edit-mark')
+
+      $('.edit-item-input').val(store.editItemName)
+      $('#edit-item').modal('show')
+    }
+  })
+}
+
+const chooseItemClickHandler = function () {
+  $('.btn-choose-item').on('click', function () {
+    if (store.isSignedIn === true) {
+      store.chooseItemListId = $(this).attr('data-choose-item-list-id')
+      listsEvents.getOneList(store.chooseItemListId)
+    }
+  })
+}
+
+const addItemClickHandler = function () {
+  $('.btn-add-item').on('click', function (e) {
+    e.preventDefault()
+    if (store.isSignedIn === true) {
+      const listId = $(this).attr('data-item-name-list-id')
+      const inputBox = `#item-name-list-id-${listId}`
+      const itemName = String($(inputBox).val())
+      $(inputBox).val('')
+      if (itemName.trim().length > 0) {
+        createOneItem(itemName, false, listId)
+      }
+    }
+  })
+}
+
+const deleteItemClickHander = function () {
+  $('.btn-delete-item').on('click', function () {
+    if (store.isSignedIn === true) {
+      const itemId = $(this).attr('data-item-delete-id')
+      onDeleteItem(itemId)
+    }
+  })
+}
+
+const checkBoxClickHander = function () {
+  $('.checkBox').on('click', function () {
+    if (store.isSignedIn === true) {
+      const mark = $(this).is(':checked')
+      const itemName = $(this).attr('data-item-name-id')
+      const itemId = $(this).attr('data-checkbox-item-id')
+      const listId = $(this).attr('data-list-id')
+      // const value = $(this).val()
+      onUpdateItem(itemName, mark, itemId, listId)
+    }
+  })
 }
 
 const addHandlers = function () {
@@ -77,3 +136,9 @@ exports.addHandlers = addHandlers
 exports.onDeleteItem = onDeleteItem
 exports.createOneItem = createOneItem
 exports.onChooseItem = onChooseItem
+exports.editItemClickHandler = editItemClickHandler
+exports.chooseItemClickHandler = chooseItemClickHandler
+exports.chooseItemClickHandler = chooseItemClickHandler
+exports.addItemClickHandler = addItemClickHandler
+exports.deleteItemClickHander = deleteItemClickHander
+exports.checkBoxClickHander = checkBoxClickHander
