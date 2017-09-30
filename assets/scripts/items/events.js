@@ -58,9 +58,12 @@ const onChooseItem = function (items) {
   })
 
   const numOfItems = unMarkedItems.length
-  const itemPosition = Math.floor(Math.random() * numOfItems) + 1
-  const choosenItem = unMarkedItems[itemPosition - 1].name
-  $('#item-choose-list-id-' + store.chooseItemListId).val(choosenItem)
+
+  if (numOfItems > 0) {
+    const itemPosition = Math.floor(Math.random() * numOfItems) + 1
+    const choosenItem = unMarkedItems[itemPosition - 1].name
+    $('#item-choose-list-id-' + store.chooseItemListId).val(choosenItem)
+  }
 }
 
 exports.onCreateItem = onCreateItem
