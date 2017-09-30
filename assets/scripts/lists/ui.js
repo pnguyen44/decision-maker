@@ -95,8 +95,7 @@ const getListsSuccess = function (data) {
 const getOneListSuccess = function (data) {
   store.list = data.list
   store.items = data.list.items
-    itemsEvents.onChooseItem(store.list.items)
-  }
+  itemsEvents.onChooseItem(store.list.items)
 }
 
 const onUpdateSuccess = function () {
