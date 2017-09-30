@@ -21,7 +21,7 @@
 
 
     {{#each list.items as |item|}}
-      <div class="item-name">
+      <div class="item-name" id='item-id-{{item.id}}'>
         {{#if item.mark}}
           <input class="checkBox" id="checked" value='{{item.mark}}' autoc omplete="off" checked data-checkbox-item-id="{{item.id}}" data-item-name-id="{{item.name}}" data-list-id='{{item.list_id}}' type="checkbox"><label for='checked'>{{item.name}}</label>
         {{else}}
