@@ -8,9 +8,12 @@ const onCreateList = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
   const list = data.list
-  listsApi.create(list.name)
-    .then(listsUi.onCreateSuccess)
-    .catch(listsUi.onError)
+  console.log('list name=', list.name)
+  if (list.name.trim().length > 0) {
+    listsApi.create(list.name)
+      .then(listsUi.onCreateSuccess)
+      .catch(listsUi.onError)
+  }
 }
 const getLists = function () {
   listsApi.index()
