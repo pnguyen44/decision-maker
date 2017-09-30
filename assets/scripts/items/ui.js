@@ -1,6 +1,6 @@
 'use strict'
 const store = require('../store')
-const itemsEvents = require('./events')
+// const itemsEvents = require('./events')
 const listsEvents = require('../lists/events')
 const onSuccess = function (data) {
 }
@@ -24,10 +24,7 @@ const onUpdateSuccess = function () {
   listsEvents.getLists()
 }
 const onDeleteSuccess = function (id) {
-  itemsEvents.getItems()
-  listsEvents.getLists()
   $('#item-id-' + id).remove()
-  $('.btn-delete-item-' + id).remove()
 }
 module.exports = {
   onCreateSuccess,
