@@ -1,7 +1,7 @@
 
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
-$font-size: 96%;
+$font-size: 130%;
 $font-family: 'Handlee', cursive;
 $white: #fffaf0;
 
@@ -72,7 +72,8 @@ body {
   border-width: 1px;
   height: 24px;
   color: blue;
-  font-weight: 5px;
+  font-style: italic;
+  font-size: $font-size;
 }
 
 .content {
