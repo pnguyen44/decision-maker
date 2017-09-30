@@ -3,6 +3,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 $font-size: 96%;
 $font-family: 'Handlee', cursive;
+$white: #fffaf0;
 
 .add-item-form{
   height: 38px;
@@ -63,9 +64,15 @@ body {
   font-size: $font-size;
 
 }
-.choose-input {
+.choosen-item {
   width: 82%;
+  // border-color: #FFFAF0;
+  border-bottom: dotted;
   margin-bottom: 7px;
+  border-width: 1px;
+  height: 24px;
+  color: blue;
+  font-weight: 5px;
 }
 
 .content {
@@ -87,8 +94,9 @@ input[type=checkbox]:checked + label {
 }
 
 .item-input {
-  width: 88%;
+  width: 87%;
 }
+
 .item-name {
   height: 40px;
   font-size: 15px;
@@ -106,12 +114,15 @@ label {
   height: 50px;
     margin-top: -9px;
 }
+
 #message-form {
   color: red;
 }
+
 .modal-title {
   font-size: 33px;
 }
+
 p {
   margin: 0 0 10px;
   font-size: 166%;
@@ -124,10 +135,9 @@ p {
 .samples{
   content: url('https://i.imgur.com/TX1LV9H.png');
   // content: url('./image/sample-lists.png');
-
-
   width: 100%;
 }
+
 .scroll {
   overflow-y:scroll;
 }

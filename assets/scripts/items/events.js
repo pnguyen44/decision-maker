@@ -43,14 +43,6 @@ const onDeleteItem = function (id) {
     .then(itemsUi.onDeleteSuccess(id))
     .catch(itemsUi.onError)
 }
-const addHandlers = function () {
-  $('#edit-item-form').on('submit', function (e) {
-    e.preventDefault()
-    const data = getFormFields(this)
-    store.item = data.item
-    onUpdateItem(store.item.name, store.editItemMark, store.editItemId, store.editItemlistId)
-  })
-}
 
 const onChooseItem = function (items) {
   const unMarkedItems = items.filter((items) => {
@@ -62,8 +54,17 @@ const onChooseItem = function (items) {
   if (numOfItems > 0) {
     const itemPosition = Math.floor(Math.random() * numOfItems) + 1
     const choosenItem = unMarkedItems[itemPosition - 1].name
-    $('#item-choose-list-id-' + store.chooseItemListId).val(choosenItem)
+    $('#item-choose-list-id-' + store.chooseItemListId).text(choosenItem)
   }
+}
+
+const addHandlers = function () {
+  $('#edit-item-form').on('submit', function (e) {
+    e.preventDefault()
+    const data = getFormFields(this)
+    store.item = data.item
+    onUpdateItem(store.item.name, store.editItemMark, store.editItemId, store.editItemlistId)
+  })
 }
 
 exports.onCreateItem = onCreateItem
