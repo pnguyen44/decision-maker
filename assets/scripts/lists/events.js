@@ -8,7 +8,6 @@ const onCreateList = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
   const list = data.list
-  console.log('list name=', list.name)
   if (list.name.trim().length > 0) {
     listsApi.create(list.name)
       .then(listsUi.onCreateSuccess)
