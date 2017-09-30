@@ -10,7 +10,7 @@
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
   <link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
-    <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
 </head>
 
@@ -22,11 +22,11 @@
     <div class="container-fluid">
       <header>
         <h1>The Decision Maker</h1>
-          <div class="navbar-header">
-          </div>
-
-      <!-- Button trigger modal -->
-      <button type="button" id="btn-account" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#account">Account</button>
+        <div class="navbar-header">
+        </div>
+      </header>
+        <!-- Button trigger modal -->
+        <button type="button" id="btn-account" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#account">Account</button>
     </div>
   </nav>
   <!-- Modal auth -->
@@ -89,98 +89,99 @@
     </div>
   </div>
 
-    <!-- Button trigger create List modal -->
-    <button type="button" class="btn btn-primary create-list-btn" data-toggle="modal" data-target="#create-list">
+  <!-- Button trigger create List modal -->
+  <button type="button" class="btn btn-primary create-list-btn" data-toggle="modal" data-target="#create-list">
       Create List
     </button>
 
-    <!-- Modal create list -->
-    <div class="modal fade" id="create-list" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Create List</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+  <!-- Modal create list -->
+  <div class="modal fade" id="create-list" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
-          </div>
-          <div class="modal-body">
-            <form id="create-list-form">
-                <div class="form-group">
+          <div class="modal-title" id="exampleModalLabel">Create List</div>
+        </div>
+        <div class="modal-body">
+          <form id="create-list-form">
+            <div class="form-group">
+              <div class="break">
                 <input class='create-list form-control' type="text" name="list[name]" placeholder="Name">
               </div>
-              <button class='btn btn-primary' type="submit" name="submit">Save List</button>
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </form>
-          </div>
+
+              <!-- <div class="modal-footer"> -->
+            </div>
+            <div class="modal-footer">
+              <button class='btn btn-primary pull-right' type="submit" name="submit">Save List</button>
+              <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+            </div>
+          </form>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Modal update list -->
-    <div class="modal fade" id="edit-list" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Edit List</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+  <!-- Modal update list -->
+  <div class="modal fade" id="edit-list" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
-          </div>
-          <div class="modal-body">
-            <form id="edit-list-form">
-              <div class="form-group">
-                <input class='edit-list-input form-control' type="text" name="list[name]" placeholder="Name">
-              </div>
+          <div class="modal-title" id="exampleModalLabel">Edit List</div>
+        </div>
+        <div class="modal-body">
+          <form id="edit-list-form">
+            <div class="form-group">
+              <input class='edit-list-input form-control' type="text" name="list[name]" placeholder="Name">
+            </div>
+            <div class="modal-footer">
+              <button class='btn btn-primary pull-right' type="submit" name="submit">Update List</button>
+            </div>
+            <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+          </form>
 
-              <button class='btn btn-primary' type="submit" name="submit">Update List</button>
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-
-            </form>
-          </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Modal update item -->
-    <div class="modal fade" id="edit-item" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Edit Item</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+  <!-- Modal update item -->
+  <div class="modal fade" id="edit-item" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
-          </div>
-          <div class="modal-body">
-            <form id="edit-item-form">
-              <div class="form-group">
-                <input class='edit-item-input form-control' type="text" name="item[name]" placeholder="Name">
-              </div>
-
-              <button class='btn btn-primary' type="submit" name="submit">Update Item</button>
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-
-            </form>
-          </div>
+          <div class="modal-title" id="exampleModalLabel">Edit Item</div>
+        </div>
+        <div class="modal-body">
+          <form id="edit-item-form">
+            <div class="form-group">
+              <input class='edit-item-input form-control' type="text" name="item[name]" placeholder="Name">
+            </div>
+            <div class="modal-footer">
+              <button class='btn btn-primary pull-right' type="submit" name="submit">Update Item</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
+  </div>
+  <div class="content">
+  </div>
 
-
-
-    <div class="content">
+  <!-- Examples -->
+  <div id="examples">
+    <div class="before-log-in-message col-xs-12">
+      <h1>Please Log In</h1>
     </div>
-
-    <!-- Examples -->
-    <div id="examples">
-      <div class="before-log-in-message col-xs-12">
-        <h1>Please Log In</h1>
-      </div>
-
-      <div class='samples'></div>
-    </div>
+    <div class='samples'></div>
+  </div>
 
 </body>
-
 </html>
