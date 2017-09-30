@@ -45,7 +45,9 @@ const addHandlers = function () {
     const listId = store.listId
     const data = getFormFields(this)
     store.list = data.list
-    updateList(store.list.name, listId)
+    if (store.list.name.trim().length > 0) {
+      updateList(store.list.name, listId)
+    }
   })
 }
 

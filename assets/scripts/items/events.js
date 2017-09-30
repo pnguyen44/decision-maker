@@ -63,7 +63,9 @@ const addHandlers = function () {
     e.preventDefault()
     const data = getFormFields(this)
     store.item = data.item
-    onUpdateItem(store.item.name, store.editItemMark, store.editItemId, store.editItemlistId)
+    if (store.item.name.trim().length > 0) {
+      onUpdateItem(store.item.name, store.editItemMark, store.editItemId, store.editItemlistId)
+    }
   })
 }
 
