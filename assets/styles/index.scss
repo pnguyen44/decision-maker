@@ -1,9 +1,11 @@
 
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+$list-name-font-size: 130%;
 $font-size: 130%;
 $font-family: 'Handlee', cursive;
 $white: #fffaf0;
+$item-name-font-size: 95%;
 
 .add-item-form {
   height: 38px;
@@ -16,7 +18,7 @@ body {
 }
 .before-log-in-message {
   text-align: center;
-  margin-top: 3%;
+  margin-top: -1%;
   margin-bottom: 3%;
 
 }
@@ -25,9 +27,10 @@ body {
   background-color: #ffff92;
   border-width: 1px;
   margin: 13px;
-  height: 300px;
+  height: 358px;
   width: 31%;
   overflow-y:scroll;
+  box-shadow: 10px 10px 5px #888888;
 }
 
 .btn-1 {
@@ -65,10 +68,8 @@ body {
 
 }
 .choosen-item {
-  width: 82%;
-  // border-color: #FFFAF0;
-  border-bottom: dotted;
-  margin-bottom: 7px;
+  width: 100%;
+  margin-bottom: 10px;
   border-width: 1px;
   height: 24px;
   color: blue;
@@ -95,12 +96,12 @@ input[type=checkbox]:checked + label {
 }
 
 .item-input {
-  width: 87%;
+  width: 90%;
 }
 
 .item-name {
   height: 40px;
-  font-size: 15px;
+  font-size: $item-name-font-size;
 
 }
 
@@ -111,9 +112,17 @@ label {
 
 
 .list-name {
-  font-size: $font-size;
+  font-size: $list-name-font-size;
   height: 50px;
     margin-top: -9px;
+}
+
+.line-under-decide {
+  width: 100%;
+  border-bottom: dotted;
+  margin-bottom: 6px;
+  margin-top: -2%;
+  border-width: 1px;
 }
 
 #message-form {
@@ -134,8 +143,7 @@ p {
 }
 
 .samples{
-  content: url('https://i.imgur.com/TX1LV9H.png');
-  // content: url('./image/sample-lists.png');
+  content: url('https://i.imgur.com/CHOO4LC.png');
   width: 100%;
 }
 

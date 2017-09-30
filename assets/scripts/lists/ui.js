@@ -29,16 +29,12 @@ const getListsSuccess = function (data) {
 
   $('.btn-add-item').on('click', function (e) {
     e.preventDefault()
-    console.log('i am here')
     if (store.isSignedIn === true) {
       const listId = $(this).attr('data-item-name-list-id')
       const inputBox = `#item-name-list-id-${listId}`
       const itemName = String($(inputBox).val())
-      console.log('itemName=', itemName)
       $(inputBox).val('')
-      console.log('length=', itemName.trim().length)
       if (itemName.trim().length > 0) {
-        console.log('hi')
         itemsEvents.createOneItem(itemName, false, listId)
       }
     }
@@ -92,33 +88,14 @@ const getListsSuccess = function (data) {
     if (store.isSignedIn === true) {
       store.chooseItemListId = $(this).attr('data-choose-item-list-id')
       listsEvents.getOneList(store.chooseItemListId)
-        // .then(onGetListItemsSuccess)
-        // return listsEvents.getOneList(store.chooseItemListId)
-        // // .then(function () {
-        //   console.log('list items=', store.items)
-        //   if (store.items.length > 0) {
-        //     itemsEvents.onChooseItem(store.list.items)
-        //   }
-        // // })
     }
   })
-}
-
-
-const onGetListItemsSuccess = function () {
-  console.log('list items=', store.items)
-  // if (store.items.length > 0) {
-    itemsEvents.onChooseItem(store.list.items)
-  // }
 }
 
 const getOneListSuccess = function (data) {
   store.list = data.list
   store.items = data.list.items
-  console.log('list items=', store.items)
-  if (store.items.length > 0) {
-    itemsEvents.onChooseItem(store.list.items)
-  }
+  itemsEvents.onChooseItem(store.list.items)
 }
 
 const onUpdateSuccess = function () {
