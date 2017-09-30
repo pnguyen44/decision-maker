@@ -1,10 +1,10 @@
 'use strict'
 const store = require('../store')
-const getFormFields = require('../../../lib/get-form-fields')
+// const getFormFields = require('../../../lib/get-form-fields')
 const listsEvents = require('./events')
 const itemsEvents = require('../items/events')
-const listsApi = require('./api')
-const listsUi = require('./ui')
+// const listsApi = require('./api')
+// const listsUi = require('./ui')
 const showListsTemplate = require('../templates/list-listing.handlebars')
 const onSuccess = function (data) {
 }
@@ -28,13 +28,19 @@ const getListsSuccess = function (data) {
   })
 
   $('.btn-add-item').on('click', function (e) {
+    e.preventDefault()
+    console.log('i am here')
     if (store.isSignedIn === true) {
-      e.preventDefault()
       const listId = $(this).attr('data-item-name-list-id')
       const inputBox = `#item-name-list-id-${listId}`
       const itemName = String($(inputBox).val())
+      console.log('itemName=', itemName)
       $(inputBox).val('')
-      itemsEvents.createOneItem(itemName, false, listId)
+      console.log('length=', itemName.trim().length)
+      if (itemName.trim().length > 0) {
+        console.log('hi')
+        itemsEvents.createOneItem(itemName, false, listId)
+      }
     }
   })
 
@@ -58,7 +64,7 @@ const getListsSuccess = function (data) {
       const itemName = $(this).attr('data-item-name-id')
       const itemId = $(this).attr('data-checkbox-item-id')
       const listId = $(this).attr('data-list-id')
-      const value = $(this).val()
+      // const value = $(this).val()
       itemsEvents.onUpdateItem(itemName, mark, itemId, listId)
     }
   })
@@ -86,14 +92,33 @@ const getListsSuccess = function (data) {
     if (store.isSignedIn === true) {
       store.chooseItemListId = $(this).attr('data-choose-item-list-id')
       listsEvents.getOneList(store.chooseItemListId)
+        // .then(onGetListItemsSuccess)
+        // return listsEvents.getOneList(store.chooseItemListId)
+        // // .then(function () {
+        //   console.log('list items=', store.items)
+        //   if (store.items.length > 0) {
+        //     itemsEvents.onChooseItem(store.list.items)
+        //   }
+        // // })
     }
   })
+}
+
+
+const onGetListItemsSuccess = function () {
+  console.log('list items=', store.items)
+  // if (store.items.length > 0) {
+    itemsEvents.onChooseItem(store.list.items)
+  // }
 }
 
 const getOneListSuccess = function (data) {
   store.list = data.list
   store.items = data.list.items
-  itemsEvents.onChooseItem(store.list.items)
+  console.log('list items=', store.items)
+  if (store.items.length > 0) {
+    itemsEvents.onChooseItem(store.list.items)
+  }
 }
 
 const onUpdateSuccess = function () {
