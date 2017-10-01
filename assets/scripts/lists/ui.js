@@ -17,18 +17,8 @@ const onCreateSuccess = function (data) {
   $('#create-list').modal('hide')
   const showOneListHTML = showOneListTemplate({list: store.list})
   $('.content').last().append(showOneListHTML)
-
-  $('.add-item-form').on('submit', function (e) {
-    e.preventDefault()
-  })
-
-  itemsEvents.addItemClickHandler()
-  itemsEvents.deleteItemClickHander()
-  listsEvents.deleteListClickHander()
-  itemsEvents.checkBoxClickHander()
-  listsEvents.editListClickHander()
-  itemsEvents.editItemClickHandler()
-  itemsEvents.chooseItemClickHandler()
+  // addEventsHandlers()
+  listsEvents.getLists()
 }
 
 const getListsSuccess = function (data) {
@@ -36,18 +26,15 @@ const getListsSuccess = function (data) {
   const showListsHTML = showListsTemplate({lists: data.lists})
   $('.content').html(showListsHTML)
   $('.content').show()
+  addEventsHandlers()
+}
 
+const addEventsHandlers = function () {
   $('.add-item-form').on('submit', function (e) {
     e.preventDefault()
   })
-
-  itemsEvents.addItemClickHandler()
-  itemsEvents.deleteItemClickHander()
-  listsEvents.deleteListClickHander()
-  itemsEvents.checkBoxClickHander()
-  listsEvents.editListClickHander()
-  itemsEvents.editItemClickHandler()
-  itemsEvents.chooseItemClickHandler()
+  itemsEvents.itemsEventsHander()
+  listsEvents.listsEventsHandler()
 }
 
 const getOneListSuccess = function (data) {

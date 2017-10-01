@@ -59,6 +59,11 @@ const editListClickHander = function () {
     store.editListButton = $(this)
   })
 }
+
+const listsEventsHandler = function  () {
+  editListClickHander()
+  deleteListClickHander()
+}
 const addHandlers = function () {
   $('#create-list-form').on('submit', onCreateList)
   $('#edit-list-form').on('submit', function (e) {
@@ -80,3 +85,4 @@ exports.onDeleteList = onDeleteList
 exports.updateList = updateList
 exports.deleteListClickHander = deleteListClickHander
 exports.editListClickHander = editListClickHander
+exports.listsEventsHandler = listsEventsHandler

@@ -105,7 +105,6 @@ const addItemClickHandler = function () {
         createOneItem(itemName, false, listId)
       }
     }
-
     store.target = $(this).parent().parent().last()
   })
 }
@@ -129,6 +128,14 @@ const checkBoxClickHander = function () {
       onUpdateItem(itemName, mark, itemId, listId)
     }
   })
+}
+
+const itemsEventsHander = function () {
+  addItemClickHandler()
+  deleteItemClickHander()
+  checkBoxClickHander()
+  editItemClickHandler()
+  chooseItemClickHandler()
 }
 
 const addHandlers = function () {
@@ -156,3 +163,4 @@ exports.chooseItemClickHandler = chooseItemClickHandler
 exports.addItemClickHandler = addItemClickHandler
 exports.deleteItemClickHander = deleteItemClickHander
 exports.checkBoxClickHander = checkBoxClickHander
+exports.itemsEventsHander = itemsEventsHander
