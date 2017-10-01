@@ -3,7 +3,8 @@ const getFormFields = require('../../../lib/get-form-fields')
 const listsApi = require('./api')
 const listsUi = require('./ui')
 const store = require('../store')
-
+// const listsEvents = require('./events')
+// const itemsEvents = require('../items/events')
 const onCreateList = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
@@ -55,9 +56,9 @@ const editListClickHander = function () {
       $('.edit-list-input').val(listName)
       $('#edit-list').modal('show')
     }
+    store.editListButton = $(this)
   })
 }
-
 const addHandlers = function () {
   $('#create-list-form').on('submit', onCreateList)
   $('#edit-list-form').on('submit', function (e) {
@@ -66,7 +67,7 @@ const addHandlers = function () {
     const data = getFormFields(this)
     store.list = data.list
     if (store.list.name.trim().length > 0) {
-      updateList(store.list.name, listId)
+      updateList(data.list.name, listId)
     }
   })
 }

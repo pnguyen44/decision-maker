@@ -6,6 +6,7 @@ const itemsEvents = require('../items/events')
 // const listsApi = require('./api')
 // const listsUi = require('./ui')
 const showListsTemplate = require('../templates/list-listing.handlebars')
+const showOneListTemplate = require('../templates/add-list-template.handlebars')
 const onSuccess = function (data) {
 }
 const onError = function () {
@@ -14,7 +15,16 @@ const onCreateSuccess = function (data) {
   store.list = data.list
   clearForm()
   $('#create-list').modal('hide')
-  listsEvents.getLists()
+  const showOneListHTML = showOneListTemplate({list: data.list})
+  $('.content').last().append(showOneListHTML)
+
+  itemsEvents.addItemClickHandler()
+  itemsEvents.deleteItemClickHander()
+  listsEvents.deleteListClickHander()
+  itemsEvents.checkBoxClickHander()
+  listsEvents.editListClickHander()
+  itemsEvents.editItemClickHandler()
+  itemsEvents.chooseItemClickHandler()
 }
 
 const getListsSuccess = function (data) {
@@ -39,11 +49,6 @@ const getListsSuccess = function (data) {
 const getOneListSuccess = function (data) {
   store.list = data.list
   store.items = data.list.items
-  if (store.items.length > 0) {
-    itemsEvents.onChooseItem(store.list.items)
-  } else {
-    $('#item-choose-list-id-' + store.chooseItemListId).text('')
-  }
 }
 
 const onUpdateSuccess = function () {
