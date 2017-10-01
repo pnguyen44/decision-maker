@@ -1,0 +1,11 @@
+<div class="item-name" id='item-id-{{item.id}}'>
+  {{#if item.mark}}
+    <input class="checkBox" id="checked" value='{{item.mark}}' autoc omplete="off" checked data-checkbox-item-id="{{item.id}}" data-item-name-id="{{item.name}}" data-list-id='{{item.list_id}}' type="checkbox"><label for='checked'>{{item.name}}</label>
+  {{else}}
+    <input class="checkBox" value='{{item.mark}}' autocomplete="off" data-checkbox-item-id="{{item.id}}" type="checkbox"><label>{{item.name}}</label>
+  {{/if}}
+  <div class="btn-item">
+    <button type="button" class="btn-edit-item btn-2 btn-default btn-xs" id="btn-edit-item-{{item.id}}" data-item-edit-id="{{item.id}}" data-item-edit-name="{{item.name}}" data-item-edit-list-id="{{item.list_id}}" data-item-edit-mark="{{item.mark}}">Edit</button>
+    <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" id="btn-delete-item-{{item.id}}" data-item-delete-id="{{item.id}}">X</button>
+  </div>
+</div>
