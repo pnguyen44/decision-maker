@@ -1,14 +1,25 @@
 'use strict'
 const store = require('../store')
-// const itemsEvents = require('./events')
+const itemsEvents = require('./events')
 const listsEvents = require('../lists/events')
+const showItemTemplate = require('../templates/add-item-template.handlebars')
+
 const onSuccess = function (data) {
 }
 const onError = function () {
 }
 const onCreateSuccess = function (data) {
   store.item = data.item
-  listsEvents.getLists()
+  const showItemHTML = showItemTemplate({item: data.item})
+  store.target.append(showItemHTML)
+
+  itemsEvents.addItemClickHandler()
+  itemsEvents.deleteItemClickHander()
+  listsEvents.deleteListClickHander()
+  itemsEvents.checkBoxClickHander()
+  listsEvents.editListClickHander()
+  itemsEvents.editItemClickHandler()
+  itemsEvents.chooseItemClickHandler()
 }
 
 const getItemsSuccess = function (data) {
