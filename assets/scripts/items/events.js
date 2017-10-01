@@ -2,7 +2,8 @@
 const itemsApi = require('./api')
 const itemsUi = require('./ui')
 const getFormFields = require('../../../lib/get-form-fields')
-const listsEvents = require('../lists/events')
+// const listsEvents = require('../lists/events')
+const listsApi = require('../lists/api')
 
 const store = require('../store')
 
@@ -75,9 +76,21 @@ const chooseItemClickHandler = function () {
   $('.btn-choose-item').on('click', function () {
     if (store.isSignedIn === true) {
       store.chooseItemListId = $(this).attr('data-choose-item-list-id')
-      listsEvents.getOneList(store.chooseItemListId)
+      listsApi.show(store.chooseItemListId)
+        .then((data) => {
+          displayChosenItem(data)
+        })
     }
   })
+}
+
+const displayChosenItem = function (data) {
+  store.items = data.list.items
+  if (store.items.length) {
+    onChooseItem(store.items)
+  } else {
+    $('#item-choose-list-id-' + store.chooseItemListId).text('')
+  }
 }
 
 const addItemClickHandler = function () {
@@ -92,6 +105,8 @@ const addItemClickHandler = function () {
         createOneItem(itemName, false, listId)
       }
     }
+
+    store.target = $(this).parent().parent().last()
   })
 }
 
@@ -111,7 +126,6 @@ const checkBoxClickHander = function () {
       const itemName = $(this).attr('data-item-name-id')
       const itemId = $(this).attr('data-checkbox-item-id')
       const listId = $(this).attr('data-list-id')
-      // const value = $(this).val()
       onUpdateItem(itemName, mark, itemId, listId)
     }
   })
