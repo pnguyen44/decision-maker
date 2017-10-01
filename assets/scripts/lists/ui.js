@@ -15,8 +15,12 @@ const onCreateSuccess = function (data) {
   store.list = data.list
   clearForm()
   $('#create-list').modal('hide')
-  const showOneListHTML = showOneListTemplate({list: data.list})
+  const showOneListHTML = showOneListTemplate({list: store.list})
   $('.content').last().append(showOneListHTML)
+
+  $('.add-item-form').on('submit', function (e) {
+    e.preventDefault()
+  })
 
   itemsEvents.addItemClickHandler()
   itemsEvents.deleteItemClickHander()
