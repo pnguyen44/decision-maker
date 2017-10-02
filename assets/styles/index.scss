@@ -150,3 +150,87 @@ p {
 .scroll {
   overflow-y:scroll;
 }
+
+@media only screen and (max-width: 320px) and (min-width: 320px) {
+  .box {
+    width: 92%;
+    font-size: 74%;
+  }
+  .item-input {
+    width: 83%;
+  }
+
+  h1 {
+    font-size: 151%;
+  }
+  h2 {
+    font-size: 136%;
+  }
+  label {
+    font-size: 100%;
+  }
+}
+
+
+@media only screen and (max-width: 600px) and (min-width: 360px) {
+  .box {
+    width: 92%;
+    font-size: 74%;
+  }
+  .item-input {
+    width: 86%;
+  }
+
+  h1 {
+    font-size: 151%;
+  }
+  h2 {
+    font-size: 136%;
+  }
+  label {
+    font-size: 100%;
+  }
+}
+
+
+@media only screen and (max-width: 600px) and (min-width: 400px) {
+  .box {
+    width: 92%;
+    font-size: 74%;
+  }
+  .item-input {
+    width: 88%;
+  }
+  h1 {
+    font-size: 154%;
+  }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 768px) {
+  .box {
+    width: 46%;
+    font-size: 64%;
+  }
+  h2 {
+    font-size: 157%;
+  }
+  .item-input {
+    width: 87%;
+  }
+  .content {
+    margin-left: 50%;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 1024px) {
+  .box {
+    width: 46%;
+    font-size: 74%;
+  }
+  // .content {
+  //   margin: auto;
+  // }
+  .item-input {
+    width: 91%;
+  }
+}
