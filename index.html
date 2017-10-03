@@ -25,8 +25,8 @@
         <div class="navbar-header">
         </div>
       </header>
-        <!-- Button trigger modal -->
-        <button type="button" id="btn-account" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#account">Account</button>
+      <!-- Button trigger modal -->
+      <button type="button" id="btn-account" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#account">Account</button>
     </div>
   </nav>
   <!-- Modal auth -->
@@ -174,7 +174,6 @@
   <div class="content">
   </div>
 
-  <!-- Examples -->
   <div id="examples">
     <div class="before-log-in-message col-xs-12">
       <h1>Please Log In</h1>
@@ -182,148 +181,6 @@
     <div class='samples'></div>
   </div>
 
-
-<!-- test -->
-
-  <!-- <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 box">
-    <div class="list-name" id='list-id-{{list.id}}'>
-
-      <div class="btn-list">
-        <button type="button" class="btn-edit-list btn-1 btn-default btn-xs" id="btn-edit-list-id-{{list.id}}" data-list-edit-id="{{list.id}}" data-list-edit-name="{{list.name}}">Edit</button>
-        <button type="button" class="btn-delete-list btn-1 btn-danger btn-xs" id="btn-delete-list-{{list.id}}" data-list-delete-id="{{list.id}}">X</button>
-      </div>
-      <h2 id="list-name-id-{{list.id}}">{{list.name}}</h2>
-    </div>
-
-    <button type="button" class="btn-choose-item pull-right btn-primary btn-xs" data-choose-item-list-id="{{list.id}}" data-choose-items="{{list.items}}">Decide</button>
-    <div type="text" name="item[name]" id='item-choose-list-id-{{list.id}}' class="choosen-item" placeholder=""></div>
-    <div class="line-under-decide"></div>
-    <form class="add-item-form">
-
-      <input type="text" name="item[name]" class="item-input" id='item-name-list-id-{{list.id}}' placeholder="Enter Item">
-      <button type="button" class="btn-add-item btn-success btn-xs" data-item-name-list-id="{{list.id}}">Add</button>
-    </form>
-
-
-      <div class="item-name" id='item-id-{{item.id}}'>
-          <input class="checkBox" id="checked" value='{{item.mark}}' autoc omplete="off" checked data-checkbox-item-id="{{item.id}}" data-item-name-id="{{item.name}}" data-list-id='{{item.list_id}}' type="checkbox"><label for='checked'>{{item.name}}</label>
-        <div class="btn-item">
-          <button type="button" class="btn-edit-item btn-2 btn-default btn-xs" id="btn-edit-item-{{item.id}}" data-item-edit-id="{{item.id}}" data-item-edit-name="{{item.name}}" data-item-edit-list-id="{{item.list_id}}" data-item-edit-mark="{{item.mark}}">Edit</button>
-          <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" id="btn-delete-item-{{item.id}}" data-item-delete-id="{{item.id}}">X</button>
-        </div>
-      </div>
-
-      <div class="item-name" id='item-id-{{item.id}}'>
-          <input class="checkBox" id="checked" value='{{item.mark}}' autoc omplete="off" checked data-checkbox-item-id="{{item.id}}" data-item-name-id="{{item.name}}" data-list-id='{{item.list_id}}' type="checkbox"><label for='checked'>{{item.name}}</label>
-        <div class="btn-item">
-          <button type="button" class="btn-edit-item btn-2 btn-default btn-xs" id="btn-edit-item-{{item.id}}" data-item-edit-id="{{item.id}}" data-item-edit-name="{{item.name}}" data-item-edit-list-id="{{item.list_id}}" data-item-edit-mark="{{item.mark}}">Edit</button>
-          <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" id="btn-delete-item-{{item.id}}" data-item-delete-id="{{item.id}}">X</button>
-        </div>
-      </div>
-
-      <div class="item-name" id='item-id-{{item.id}}'>
-          <input class="checkBox" id="checked" value='{{item.mark}}' autoc omplete="off" checked data-checkbox-item-id="{{item.id}}" data-item-name-id="{{item.name}}" data-list-id='{{item.list_id}}' type="checkbox"><label for='checked'>{{item.name}}</label>
-        <div class="btn-item">
-          <button type="button" class="btn-edit-item btn-2 btn-default btn-xs" id="btn-edit-item-{{item.id}}" data-item-edit-id="{{item.id}}" data-item-edit-name="{{item.name}}" data-item-edit-list-id="{{item.list_id}}" data-item-edit-mark="{{item.mark}}">Edit</button>
-          <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" id="btn-delete-item-{{item.id}}" data-item-delete-id="{{item.id}}">X</button>
-        </div>
-      </div>
-
-  </div>
-
-
-<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 box">
-  <div class="list-name" id='list-id-{{list.id}}'>
-
-    <div class="btn-list">
-      <button type="button" class="btn-edit-list btn-1 btn-default btn-xs" id="btn-edit-list-id-{{list.id}}" data-list-edit-id="{{list.id}}" data-list-edit-name="{{list.name}}">Edit</button>
-      <button type="button" class="btn-delete-list btn-1 btn-danger btn-xs" id="btn-delete-list-{{list.id}}" data-list-delete-id="{{list.id}}">X</button>
-    </div>
-    <h2 id="list-name-id-{{list.id}}">{{list.name}}</h2>
-  </div>
-
-  <button type="button" class="btn-choose-item pull-right btn-primary btn-xs" data-choose-item-list-id="{{list.id}}" data-choose-items="{{list.items}}">Decide</button>
-  <div type="text" name="item[name]" id='item-choose-list-id-{{list.id}}' class="choosen-item" placeholder=""></div>
-  <div class="line-under-decide"></div>
-  <form class="add-item-form">
-    <input type="text" name="item[name]" class="item-input" id='item-name-list-id-{{list.id}}' placeholder="Enter Item">
-    <button type="button" class="btn-add-item btn-success btn-xs" data-item-name-list-id="{{list.id}}">Add</button>
-  </form>
-
-
-    <div class="item-name" id='item-id-{{item.id}}'>
-        <input class="checkBox" id="checked" value='{{item.mark}}' autoc omplete="off" checked data-checkbox-item-id="{{item.id}}" data-item-name-id="{{item.name}}" data-list-id='{{item.list_id}}' type="checkbox"><label for='checked'>{{item.name}}</label>
-      <div class="btn-item">
-        <button type="button" class="btn-edit-item btn-2 btn-default btn-xs" id="btn-edit-item-{{item.id}}" data-item-edit-id="{{item.id}}" data-item-edit-name="{{item.name}}" data-item-edit-list-id="{{item.list_id}}" data-item-edit-mark="{{item.mark}}">Edit</button>
-        <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" id="btn-delete-item-{{item.id}}" data-item-delete-id="{{item.id}}">X</button>
-      </div>
-    </div>
-
-    <div class="item-name" id='item-id-{{item.id}}'>
-        <input class="checkBox" id="checked" value='{{item.mark}}' autoc omplete="off" checked data-checkbox-item-id="{{item.id}}" data-item-name-id="{{item.name}}" data-list-id='{{item.list_id}}' type="checkbox"><label for='checked'>{{item.name}}</label>
-      <div class="btn-item">
-        <button type="button" class="btn-edit-item btn-2 btn-default btn-xs" id="btn-edit-item-{{item.id}}" data-item-edit-id="{{item.id}}" data-item-edit-name="{{item.name}}" data-item-edit-list-id="{{item.list_id}}" data-item-edit-mark="{{item.mark}}">Edit</button>
-        <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" id="btn-delete-item-{{item.id}}" data-item-delete-id="{{item.id}}">X</button>
-      </div>
-    </div>
-
-    <div class="item-name" id='item-id-{{item.id}}'>
-        <input class="checkBox" id="checked" value='{{item.mark}}' autoc omplete="off" checked data-checkbox-item-id="{{item.id}}" data-item-name-id="{{item.name}}" data-list-id='{{item.list_id}}' type="checkbox"><label for='checked'>{{item.name}}</label>
-      <div class="btn-item">
-        <button type="button" class="btn-edit-item btn-2 btn-default btn-xs" id="btn-edit-item-{{item.id}}" data-item-edit-id="{{item.id}}" data-item-edit-name="{{item.name}}" data-item-edit-list-id="{{item.list_id}}" data-item-edit-mark="{{item.mark}}">Edit</button>
-        <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" id="btn-delete-item-{{item.id}}" data-item-delete-id="{{item.id}}">X</button>
-      </div>
-    </div>
-
-</div>
-
-
-<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 box">
-  <div class="list-name" id='list-id-{{list.id}}'>
-
-    <div class="btn-list">
-      <button type="button" class="btn-edit-list btn-1 btn-default btn-xs" id="btn-edit-list-id-{{list.id}}" data-list-edit-id="{{list.id}}" data-list-edit-name="{{list.name}}">Edit</button>
-      <button type="button" class="btn-delete-list btn-1 btn-danger btn-xs" id="btn-delete-list-{{list.id}}" data-list-delete-id="{{list.id}}">X</button>
-    </div>
-    <h2 id="list-name-id-{{list.id}}">{{list.name}}</h2>
-  </div>
-  <button type="button" class="btn-choose-item pull-right btn-primary btn-xs" data-choose-item-list-id="{{list.id}}" data-choose-items="{{list.items}}">Decide</button>
-  <div type="text" name="item[name]" id='item-choose-list-id-{{list.id}}' class="choosen-item" placeholder=""></div>
-  <div class="line-under-decide"></div>
-  <form class="add-item-form">
-    <input type="text" name="item[name]" class="item-input" id='item-name-list-id-{{list.id}}' placeholder="Enter Item">
-    <button type="button" class="btn-add-item btn-success btn-xs" data-item-name-list-id="{{list.id}}">Add</button>
-  </form>
-
-
-    <div class="item-name" id='item-id-{{item.id}}'>
-        <input class="checkBox" id="checked" value='{{item.mark}}' autoc omplete="off" checked data-checkbox-item-id="{{item.id}}" data-item-name-id="{{item.name}}" data-list-id='{{item.list_id}}' type="checkbox"><label for='checked'>{{item.name}}</label>
-      <div class="btn-item">
-        <button type="button" class="btn-edit-item btn-2 btn-default btn-xs" id="btn-edit-item-{{item.id}}" data-item-edit-id="{{item.id}}" data-item-edit-name="{{item.name}}" data-item-edit-list-id="{{item.list_id}}" data-item-edit-mark="{{item.mark}}">Edit</button>
-        <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" id="btn-delete-item-{{item.id}}" data-item-delete-id="{{item.id}}">X</button>
-      </div>
-    </div>
-
-    <div class="item-name" id='item-id-{{item.id}}'>
-        <input class="checkBox" id="checked" value='{{item.mark}}' autoc omplete="off" checked data-checkbox-item-id="{{item.id}}" data-item-name-id="{{item.name}}" data-list-id='{{item.list_id}}' type="checkbox"><label for='checked'>{{item.name}}</label>
-      <div class="btn-item">
-        <button type="button" class="btn-edit-item btn-2 btn-default btn-xs" id="btn-edit-item-{{item.id}}" data-item-edit-id="{{item.id}}" data-item-edit-name="{{item.name}}" data-item-edit-list-id="{{item.list_id}}" data-item-edit-mark="{{item.mark}}">Edit</button>
-        <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" id="btn-delete-item-{{item.id}}" data-item-delete-id="{{item.id}}">X</button>
-      </div>
-    </div>
-
-    <div class="item-name" id='item-id-{{item.id}}'>
-        <input class="checkBox" id="checked" value='{{item.mark}}' autoc omplete="off" checked data-checkbox-item-id="{{item.id}}" data-item-name-id="{{item.name}}" data-list-id='{{item.list_id}}' type="checkbox"><label for='checked'>{{item.name}}</label>
-      <div class="btn-item">
-        <button type="button" class="btn-edit-item btn-2 btn-default btn-xs" id="btn-edit-item-{{item.id}}" data-item-edit-id="{{item.id}}" data-item-edit-name="{{item.name}}" data-item-edit-list-id="{{item.list_id}}" data-item-edit-mark="{{item.mark}}">Edit</button>
-        <button type="button" class="btn-delete-item btn-2 btn-danger btn-xs" id="btn-delete-item-{{item.id}}" data-item-delete-id="{{item.id}}">X</button>
-      </div>
-    </div>
-
-</div> -->
-
-
-
-<!-- test end -->
 </body>
+
 </html>
