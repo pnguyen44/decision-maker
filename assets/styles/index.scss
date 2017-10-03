@@ -26,7 +26,7 @@ body {
   border-style: solid;
   background-color: #ffff92;
   border-width: 1px;
-  margin: 15px;
+  margin: 20px;
   height: 358px;
   width: 31%;
   overflow-y:scroll;
@@ -231,7 +231,7 @@ p {
 
 @media only screen and (max-width: 1440px) and (min-width: 1025px) {
   .box {
-    width: 31%;
+    width: 30%;
     font-size: 74%;
   }
   .item-input {
