@@ -4,10 +4,10 @@ const listEvents = require('../lists/events')
 const signUpSuccess = function (data) {
   store.user = data.user
   store.token = data.user.token
-  // $('#message-form').html('Successfully signed up. Please log in!')
+  $('#modal-sign-up').modal('hide')
 }
 const signUpFailure = function () {
-  $('#message-form').html('Error on sin up')
+  $('.message-form').html('Error on sin up')
   clearForm()
 }
 
@@ -19,39 +19,46 @@ const signInSuccess = function (data) {
   $('#examples').hide()
 
   $('.content').css('display', 'none')
-  $('#message-form').html('Successfully signed in')
-  $('#account').modal('hide')
+  // $('.message-form').html('Successfully signed in')
+  $('#modal-sign-in').modal('hide')
+  $('#btn-sign-in').hide()
+  $('#btn-sign-up').hide()
+  $('#btn-change-password').show()
+  $('#btn-sign-out').show()
   listEvents.getLists()
   $('.create-list-btn').show()
 }
 const signInFailure = function (error) {
   console.error(error)
-  $('#message-form').html('Error on sign in')
+  $('.message-form').html('Error on sign in')
   clearForm()
 }
 
 const changePasswordSuccess = (data) => {
   clearForm()
   $('#sign-out').show()
-  $('#message-form').html('Successfully changed password')
+  $('.message-form').html('Successfully changed password')
 }
 
 const changePasswordFailure = () => {
-  $('#message-form').html('Error on change password')
+  $('.message-form').html('Error on change password')
   clearForm()
 }
 const signOutSuccess = function (data) {
   store.user = null
   store.isSignedIn = false
-  $('#message-form').html('Successfully signed out')
-  $('#account').modal('hide')
+  $('.message-form').html('Successfully signed out')
+  $('#btn-sign-in').show()
+  $('#btn-sign-up').show()
+  $('#btn-change-password').hide()
+  $('#btn-sign-out').hide()
   $('.content').hide()
   $('.create-list-btn').hide()
   $('#examples').show()
 }
 
 const signOutFailure = function () {
-  $('#message-form').html('Error on sign out')
+  $('.message-form').html('Error on sign out')
   $('#sign-out').hide()
   $('#examples').show()
 }

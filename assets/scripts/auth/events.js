@@ -42,12 +42,13 @@ const onSignOut = function (event) {
     .catch(ui.signOutFailure)
 }
 const clearMessage = function () {
-  $('#message-form').text('')
+  $('.message-form').text('')
 }
 
 const addHandlers = function () {
-  $('#account').on('click', function () {
-    $('message-form').text('')
+  $('.btn-auth').on('click', function () {
+
+    $('.message-form').text('')
   })
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)

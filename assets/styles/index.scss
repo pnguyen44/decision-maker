@@ -86,6 +86,9 @@ body {
 .create-list-btn {
 margin-left: 19px;
 }
+.navbar-header {
+  color: white;
+}
 header {
   color: white;
 }
@@ -125,7 +128,7 @@ label {
   border-width: 1px;
 }
 
-#message-form {
+.message-form {
   color: red;
 }
 
