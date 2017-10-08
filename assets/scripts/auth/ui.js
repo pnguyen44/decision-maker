@@ -4,7 +4,7 @@ const listEvents = require('../lists/events')
 const signUpSuccess = function (data) {
   store.user = data.user
   store.token = data.user.token
-  $('#message-form').html('Successfully signed up. Please log in!')
+  // $('#message-form').html('Successfully signed up. Please log in!')
 }
 const signUpFailure = function () {
   $('#message-form').html('Error on sin up')
