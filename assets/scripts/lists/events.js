@@ -60,7 +60,7 @@ const editListClickHander = function () {
   })
 }
 
-const listsEventsHandler = function  () {
+const listsEventsHandler = function () {
   editListClickHander()
   deleteListClickHander()
 }
