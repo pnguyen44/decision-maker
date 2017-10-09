@@ -7,7 +7,7 @@ const signUpSuccess = function (data) {
   // $('#message-form').html('Successfully signed up. Please log in!')
 }
 const signUpFailure = function () {
-  $('#message-form').html('Error on sin up')
+  $('#message-form').html('Error on sign up')
   clearForm()
 }
 
