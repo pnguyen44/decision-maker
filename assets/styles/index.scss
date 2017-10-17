@@ -46,10 +46,10 @@ body {
   margin-left: 10px;
   float: right;
 }
-#btn-account {
-  margin-top: -45px;
-  float: right;
-}
+// #btn-account {
+//   margin-top: -45px;
+//   float: right;
+// }
 .btn-add-item {
   float: right;
   margin-top: 2px;
@@ -85,6 +85,9 @@ body {
 
 .create-list-btn {
 margin-left: 19px;
+}
+.navbar-header {
+  color: white;
 }
 header {
   color: white;
@@ -125,12 +128,16 @@ label {
   border-width: 1px;
 }
 
-#message-form {
+.message-form {
   color: red;
 }
 
 .modal-title {
   font-size: 33px;
+}
+
+.nav {
+  font-size: 20px;
 }
 
 p {
