@@ -7,7 +7,7 @@ const signUpSuccess = function (data) {
   $('#modal-sign-up').modal('hide')
 }
 const signUpFailure = function () {
-  $('#message-form').html('Error on sign up')
+  $('.message-form').html('Error on sign up')
   clearForm()
 }
 
@@ -29,7 +29,6 @@ const signInSuccess = function (data) {
   $('.create-list-btn').show()
 }
 const signInFailure = function (error) {
-  console.error(error)
   $('.message-form').html('Error on sign in')
   clearForm()
 }
