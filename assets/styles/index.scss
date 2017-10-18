@@ -46,10 +46,10 @@ body {
   margin-left: 10px;
   float: right;
 }
-#btn-account {
-  margin-top: -45px;
-  float: right;
-}
+// #btn-account {
+//   margin-top: -45px;
+//   float: right;
+// }
 .btn-add-item {
   float: right;
   margin-top: 2px;
@@ -86,6 +86,9 @@ body {
 .create-list-btn {
 margin-left: 19px;
 }
+.navbar-header {
+  color: white;
+}
 header {
   color: white;
 }
@@ -97,6 +100,7 @@ input[type=checkbox]:checked + label {
 
 .item-input {
   width: 92%;
+  height: 65%;
 }
 
 .item-name {
@@ -125,12 +129,16 @@ label {
   border-width: 1px;
 }
 
-#message-form {
+.message-form {
   color: red;
 }
 
 .modal-title {
   font-size: 33px;
+}
+
+.nav {
+  font-size: 20px;
 }
 
 p {
@@ -172,7 +180,7 @@ p {
 }
 
 
-@media only screen and (max-width: 400px) and (min-width: 360px) {
+@media only screen and (max-width: 454px) and (min-width: 360px) {
   .box {
     width: 86%;
     font-size: 74%;
@@ -193,20 +201,20 @@ p {
 }
 
 
-@media only screen and (max-width: 600px) and (min-width: 400px) {
+@media only screen and (max-width: 692px) and (min-width: 455px) {
   .box {
     width: 89%;
     font-size: 74%;
   }
   .item-input {
-    width: 88%;
+    width: 89%;
   }
   h1 {
     font-size: 154%;
   }
 }
 
-@media only screen and (max-width: 768px) and (min-width: 768px) {
+@media only screen and (max-width: 1009px) and (min-width: 693px) {
   .box {
     width: 45%;
     font-size: 64%;
@@ -219,31 +227,32 @@ p {
   }
 }
 
-@media only screen and (max-width: 1024px) and (min-width: 1024px) {
+// @media only screen and (max-width: 1252px) and (min-width: 1024px) {
+//   .box {
+//     width: 46%;
+//     font-size: 74%;
+//   }
+//   .item-input {
+//     width: 90%;
+//   }
+// }
+
+@media only screen and (max-width: 1993px) and (min-width: 1010px) {
   .box {
-    width: 46%;
+    width: 30%;
     font-size: 74%;
   }
   .item-input {
-    width: 91%;
+    width: 86%
   }
 }
 
-@media only screen and (max-width: 1440px) and (min-width: 1025px) {
-  .box {
-    width: 31%;
-    font-size: 74%;
-  }
-  .item-input {
-    width: 91%;
-  }
-}
-@media only screen and (max-width: 2560px) and (min-width: 2560px) {
+@media only screen and (max-width: 2560px) and (min-width: 1994px) {
   .box {
     width: 31%;
     margin-left: 1%;
   }
   .item-input {
-    width: 95%;
+    width: 93%;
   }
 }

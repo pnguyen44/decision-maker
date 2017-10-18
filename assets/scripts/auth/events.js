@@ -10,6 +10,7 @@ const onSignUp = function (event) {
 
   api.signUp(data)
     .then(ui.signUpSuccess)
+    // .catch(ui.signUpFailure)
     .then(() => {
       return api.signIn(data)
     })
@@ -20,7 +21,7 @@ const onSignUp = function (event) {
 const onSignIn = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  clearMessage()
+  // clearMessage()
   api.signIn(data)
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
@@ -42,12 +43,13 @@ const onSignOut = function (event) {
     .catch(ui.signOutFailure)
 }
 const clearMessage = function () {
-  $('#message-form').text('')
+  $('.message-form').text('')
 }
 
 const addHandlers = function () {
-  $('#account').on('click', function () {
-    $('message-form').text('')
+  $('.btn-auth').on('click', function () {
+
+    $('.message-form').text('')
   })
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
