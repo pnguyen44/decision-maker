@@ -45,16 +45,26 @@ const onSignOut = function (event) {
 const clearMessage = function () {
   $('.message-form').text('')
 }
-
+const clearFormInput = function () {
+  $('#email-address').val('')
+  $('#password').val('')
+  $('#password-confirmation').val('')
+  $('#email-address-sign-in').val('')
+  $('#password-sign-in').val('')
+  $('#old-password').val('')
+  $('#new-password').val('')
+}
 const addHandlers = function () {
   $('.btn-auth').on('click', function () {
-
     $('.message-form').text('')
   })
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#btn-sign-out').on('click', onSignOut)
+  $('#btn-sign-up').on('click', clearFormInput)
+  $('#btn-sign-in').on('click', clearFormInput)
+  $('#btn-change-password').on('click', clearFormInput)
 }
 
 module.exports = {
