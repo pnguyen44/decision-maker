@@ -28,7 +28,7 @@ const signInSuccess = function (data) {
   listEvents.getLists()
   $('.create-list-btn').show()
 }
-const signInFailure = function (error) {
+const signInFailure = function () {
   $('.message-form').html('Error on sign in')
   clearForm()
 }
