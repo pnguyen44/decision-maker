@@ -221,6 +221,9 @@ footer {
       footer span.copyright {
           font-size: 80%;
       }
+      .create-list-btn {
+        margin-top: 72px;
+      }
     }
 
 @media only screen and (max-width: 454px) and (min-width: 360px) {
@@ -248,6 +251,9 @@ footer {
   // .content-wrapper {
   //     margin-left: -8px;
   //   }
+  .create-list-btn {
+    margin-top: 72px;
+  }
 }
 
 
@@ -262,6 +268,9 @@ footer {
   h1 {
     font-size: 154%;
   }
+  // .create-list-btn {
+  //   margin-top: 72px;
+  // }
 }
 
 @media only screen and (max-width: 1009px) and (min-width: 693px) {
