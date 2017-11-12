@@ -184,6 +184,27 @@ p {
   }
 }
 
+footer {
+  // border-color: black;
+  height: 90px;
+  margin-top: 150px;
+  padding: 25px 0;
+  text-align: center;
+  background-color: black;
+  color: white;
+}
+  footer a {
+    color: lightblue;
+  }
+  footer a:hover {
+    color: lightgrey;
+  }
+  footer span.copyright {
+    font-size: 125%;
+    line-height: 40px;
+    text-transform: none;
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
 
 @media only screen and (max-width: 454px) and (min-width: 360px) {
   .box {
