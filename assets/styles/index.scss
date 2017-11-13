@@ -171,6 +171,28 @@ p {
 .scroll {
   overflow-y:scroll;
 }
+footer {
+  // border-color: black;
+  height: 90px;
+  margin-top: 400px;
+  padding: 25px 0;
+  text-align: center;
+  // background-color: black;
+  color: black;
+}
+  footer span a {
+    color: blue;
+  }
+  footer a:hover {
+    color: darkblue;
+  }
+  footer span.copyright {
+    // margin-top: 900px;
+    font-size: 125%;
+    line-height: 40px;
+    text-transform: none;
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
 
 @media only screen and (max-width: 320px) and (min-width: 319px) {
   .box {
@@ -195,36 +217,6 @@ p {
     font-size: 100%;
   }
 }
-
-footer {
-  // border-color: black;
-  height: 90px;
-  margin-top: 0px;
-  padding: 25px 0;
-  text-align: center;
-  // background-color: black;
-  color: black;
-}
-  footer a {
-    color: blue;
-  }
-  footer a:hover {
-    color: darkblue;
-  }
-  footer span.copyright {
-    font-size: 125%;
-    line-height: 40px;
-    text-transform: none;
-    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
-
-    @media (max-width: 575px) {
-      footer span.copyright {
-          font-size: 80%;
-      }
-      .create-list-btn {
-        margin-top: 72px;
-      }
-    }
 
 @media only screen and (max-width: 454px) and (min-width: 360px) {
   .box {
@@ -257,6 +249,14 @@ footer {
 }
 
 
+    @media (max-width: 575px) {
+      footer span.copyright {
+          font-size: 80%;
+      }
+      .create-list-btn {
+        margin-top: 72px;
+      }
+    }
 @media only screen and (max-width: 692px) and (min-width: 455px) {
   .box {
     width: 89%;
