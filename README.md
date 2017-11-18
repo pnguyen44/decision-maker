@@ -1,6 +1,6 @@
 # The Decision Maker
 
-The Decision-Maker app was created using HTML, Ruby on Rails, CSS/SASS, jQuery, Javascript, AJAX, and Bootstrap. This app allows users to create a list and items within a list. In addition, users can edit, delete, and add an item and list. The main purpose of this app is to help users make decisions by randomly displaying an item that was not checked off in a list.
+The Decision-maker is a full stack app that allows users to create lists with the option to have the app automate the selection process. This app helps users make decisions quickly and easily. The app will select from the remaining items on the list that has not been checked off as completed by the user. It was created using Ruby on Rails, Javascript, AJAX, jQuery, Bootstrap, Handlebars, HTML, and CSS/SASS.  I ensured that my app was mobile-friendly to serve users on a variety of devices.
 
 # User Stories
 
