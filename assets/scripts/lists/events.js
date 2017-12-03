@@ -42,7 +42,10 @@ const deleteListClickHander = function () {
   $('.btn-delete-list').on('click', function () {
     if (store.isSignedIn === true) {
       const listId = $(this).attr('data-list-delete-id')
-      onDeleteList(listId)
+      $('#modal-delete-confirm').modal('show')
+      $('.btn-delete').on('click', function () {
+        onDeleteList(listId)
+      })
     }
   })
 }
