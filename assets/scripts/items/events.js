@@ -115,7 +115,7 @@ const deleteItemClickHander = function () {
     console.log('first cleick')
     if (store.isSignedIn === true) {
       store.itemId = $(this).attr('data-item-delete-id')
-      $('#modal-delete-confirm').modal('show')
+      $('#modal-delete-item-confirm').modal('show')
     }
   })
 }

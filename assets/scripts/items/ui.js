@@ -27,7 +27,7 @@ const onUpdateSuccess = function () {
 }
 const onDeleteSuccess = function (id) {
   $('#item-id-' + id).remove()
-  $('#modal-delete-confirm').modal('hide')
+  $('#modal-delete-item-confirm').modal('hide')
 }
 module.exports = {
   onCreateSuccess,
