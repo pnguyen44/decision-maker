@@ -10,6 +10,7 @@
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
+  margin-bottom: 30px;
 }
 
 .card > hr {
@@ -110,7 +111,7 @@
   width: 100%;
   border-top-left-radius: calc(0.25rem - 1px);
   border-top-right-radius: calc(0.25rem - 1px);
-  height: 154px;
+  height: 237px;
 background-color: lightsteelblue;
 }
 
@@ -242,6 +243,11 @@ container {
   margin-left: auto;
 }
 
+/*@media (max-width: 575px) {
+  .row{
+    padding: 100px;
+  }
+}*/
 @media (min-width: 576px) {
   .container {
     max-width: 540px;
