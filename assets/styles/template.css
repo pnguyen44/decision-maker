@@ -235,11 +235,12 @@
 .jumbotron {
   background-color: white;
 }
-/*.bg-dark {
+.bg-dark {
   background-color: #343a40 !important;
+  background-color: #101010 !important;
   color: white;
 }
 
 a.bg-dark:focus, a.bg-dark:hover {
   background-color: #1d2124 !important;
-}*/
+}
