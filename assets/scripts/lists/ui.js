@@ -49,6 +49,7 @@ const onUpdateSuccess = function () {
 
 const onDeleteSuccess = function (id) {
   $('#list-id-' + id).parent().remove()
+  $('#modal-delete-list-confirm').modal('hide')
 }
 
 const clearForm = function () {

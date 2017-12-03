@@ -41,11 +41,8 @@ const onDeleteList = function (id) {
 const deleteListClickHander = function () {
   $('.btn-delete-list').on('click', function () {
     if (store.isSignedIn === true) {
-      const listId = $(this).attr('data-list-delete-id')
-      $('#modal-delete-confirm').modal('show')
-      $('.btn-delete').on('click', function () {
-        onDeleteList(listId)
-      })
+      store.listId = $(this).attr('data-list-delete-id')
+      $('#modal-delete-list-confirm').modal('show')
     }
   })
 }
@@ -77,6 +74,9 @@ const addHandlers = function () {
     if (store.list.name.trim().length > 0) {
       updateList(data.list.name, listId)
     }
+  })
+  $('.btn-delete-list-confirm').on('click', function () {
+    onDeleteList(store.listId)
   })
 }
 
