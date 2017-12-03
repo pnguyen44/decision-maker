@@ -19,6 +19,7 @@ $(() => {
   authEvents.addHandlers()
   $('#examples').show()
 
+
   // $('#btn-account').on('click', function () {
   //   $('.message-form').text('')
   //   if (store.isSignedIn === true) {
