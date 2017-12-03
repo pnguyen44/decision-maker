@@ -173,24 +173,25 @@ p {
   overflow-y:scroll;
 }
 footer {
-  // border-color: black;
-  height: 90px;
-  margin-top: 550px;
-  padding: 25px 0;
-  text-align: center;
-  // background-color: black;
-  color: black;
+  background-color: #101010;
+  // height: 90px;
+//   margin-top: 550px;
+//   padding: 25px 0;
+//   text-align: center;
+    margin-top: 29px;
+  color: white;
 }
   footer span a {
-    color: blue;
+    color: lightblue;
   }
   footer a:hover {
     color: darkblue;
   }
   footer span.copyright {
-    // margin-top: 900px;
+    padding-top: 5px;
     font-size: 125%;
-    line-height: 40px;
+    height: 70px;
+    line-height: 70px;
     text-transform: none;
     font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
