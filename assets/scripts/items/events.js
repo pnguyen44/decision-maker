@@ -149,7 +149,7 @@ const addHandlers = function () {
       onUpdateItem(store.item.name, store.editItemMark, store.editItemId, store.editItemlistId)
     }
   })
-  $('.btn-delete').on('click', function () {
+  $('.btn-delete-item-confirm').on('click', function () {
     onDeleteItem(store.itemId)
   })
 }
