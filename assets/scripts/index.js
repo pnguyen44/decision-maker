@@ -17,7 +17,7 @@ $(() => {
   listEvents.addHandlers()
   itemEvents.addHandlers()
   authEvents.addHandlers()
-  $('#examples').show()
+    $('#examples').show()
     $('#register').on('click', function () {
     $('#modal-sign-in').modal('hide')
     $('#modal-sign-up').modal('show')
