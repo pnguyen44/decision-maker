@@ -23,6 +23,17 @@ const onCreateSuccess = function (data) {
 
 const getListsSuccess = function (data) {
   store.lists = data.lists
+  let checkedItem = []
+  let uncheckedItem = []
+  data.lists.forEach(function (list) {
+    checkedItem = list.items.filter(function (item) {
+      return item.mark === true
+    })
+    uncheckedItem = list.items.filter(function (item) {
+      return item.mark === false
+    })
+    list.items = uncheckedItem.concat(checkedItem)
+  })
   const showListsHTML = showListsTemplate({lists: data.lists})
   $('.content').html(showListsHTML)
   $('.content').show()
