@@ -250,18 +250,10 @@ background-color: lightsteelblue;
   margin-bottom: 15px;
 }
 
-@media (min-width: 576px) {
-
-}
-
 .card-columns .card {
   margin-bottom: 0.75rem;
 }
 
-@media (min-width: 576px) {
-
-
-}
 
 container {
   width: 100%;
@@ -280,9 +272,6 @@ container {
 @media (min-width: 768px) {
   .container {
     max-width: 720px;
-  }
-  .card-body{
-
   }
 }
 
