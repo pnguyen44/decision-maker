@@ -1,5 +1,10 @@
 .row:before, .row:after {display: none !important;}
 
+.hero-features {
+  /* border: 1px solid rgba(0, 0, 0, 0.125); */
+  /* padding: 34px; */
+  margin-bottom: 20px;
+}
 body {
   padding-top: 54px;
 }
