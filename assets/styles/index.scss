@@ -11,11 +11,22 @@ $item-name-font-size: 95%;
 .add-item-form {
   height: 38px;
 }
-
+html {
+  margin: 0px;
+  padding: 0px;
+  height: 100%
+}
+.content-wrapper {
+  min-height: 100%;
+  position: relative;
+}
 body {
   font-family: $font-family;
   font-weight: 500;
  background-color: #efefef;
+ margin: 0px;
+ padding: 0px;
+ height: 100%
 }
 .before-log-in-message {
   text-align: center;
@@ -175,16 +186,17 @@ p {
   overflow-y:scroll;
 }
 footer {
-  // background-color: #101010;
+  background-color: #101010;
   height: 90px;
-  margin-top: 500px;
+  // margin-top: -200px;
+  position: absolute;
   padding: 25px 0;
   text-align: center;
-  color: darkblue;
+  color: white;
   }
 
   footer span a {
-    color: blue;
+    color: lightblue;
   }
   footer a:hover {
     color: lightgrey;
