@@ -107,12 +107,11 @@ input[type='radio'], input[type='checkbox'] {
     margin-left: 25px;
   margin-top: 100px;
 }
-// .content-wrapper {
-//   margin-left: 19px;
-// }
+
 .navbar-header {
   color: white;
   // font-size: 40px;
+
 }
 header {
   color: white;
@@ -219,9 +218,6 @@ footer {
     width: 83%;
   }
 
-  // h1 {
-  //   font-size: 151%;
-  // }
   h2 {
     font-size: 136%;
   }
@@ -252,13 +248,6 @@ footer {
   label {
     font-size: 100%;
   }
-  // footer span.copyright {
-  //     font-size: 80%;
-  // }
-
-  // .content-wrapper {
-  //     margin-left: -8px;
-  //   }
   .create-list-btn {
     margin-top: 72px;
   }
@@ -286,12 +275,6 @@ footer {
   .item-input {
     width: 89%;
   }
-  h1 {
-    // font-size:223%;
-  }
-  // .create-list-btn {
-  //   margin-top: 72px;
-  // }
 }
 
 @media only screen and (max-width: 1009px) and (min-width: 693px) {
@@ -305,13 +288,6 @@ footer {
   .item-input {
     width: 87%;
   }
-  // footer span.copyright {
-    // border: 1px solid;
-  // margin-top: 90px;
-  // }
-  // .content-wrapper {
-  //   margin-left: 19px;
-  // }
 }
 
 // @media only screen and (max-width: 1252px) and (min-width: 1024px) {
