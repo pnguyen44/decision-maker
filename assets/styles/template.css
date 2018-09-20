@@ -10,6 +10,10 @@
   margin-top: 37px;
 }
 
+.features {
+  font-weight: bolder;
+}
+
 .card {
   position: relative;
   display: -ms-flexbox;
