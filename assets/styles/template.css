@@ -1,3 +1,20 @@
+.row:before, .row:after {display: none !important;}
+
+body {
+  padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+
+.card {
+  height: 100%;
+}
+
+
 .card {
   position: relative;
   display: -ms-flexbox;
