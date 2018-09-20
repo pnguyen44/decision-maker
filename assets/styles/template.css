@@ -5,20 +5,10 @@
   /* padding: 34px; */
   margin-bottom: 20px;
 }
-body {
-  padding-top: 54px;
-}
 
-@media (min-width: 992px) {
-  body {
-    padding-top: 56px;
-  }
+.jumbotron {
+  margin-top: 37px;
 }
-
-.card {
-  height: 100%;
-}
-
 
 .card {
   position: relative;
@@ -58,7 +48,8 @@ body {
 }
 
 .card-title {
-  margin-bottom: 0.75rem;
+  font-weight: bolder;
+  margin-bottom: 2.75rem;
   font-size: 26px;
 }
 
@@ -176,7 +167,7 @@ background-color: lightsteelblue;
     margin-left: 15px;
   }
   .card-body {
-    height: 184px;
+    height: 223px;
   }
 }
 
