@@ -152,6 +152,40 @@ background-color: lightsteelblue;
   margin-bottom: 15px;
 }
 
+.card-group {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+
+.card-group .card {
+  margin-bottom: 15px;
+}
+
+.card-columns .card {
+  margin-bottom: 0.75rem;
+}
+
+
+container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+@media only screen and (max-width: 576px) and (min-width: 319px){
+  header h1{
+    font-size: 30px;
+  }
+  .features {
+    font-size: 20px;
+  }
+}
+
 @media (min-width: 576px) {
   .card-deck {
     -ms-flex-flow: row wrap;
@@ -239,39 +273,13 @@ background-color: lightsteelblue;
   }
 }
 
-.card-group {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
-}
-
-.card-group .card {
-  margin-bottom: 15px;
-}
-
-.card-columns .card {
-  margin-bottom: 0.75rem;
-}
-
-
-container {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-@media only screen and (max-width: 576px) and (min-width: 360px){
-  header h1{
-    font-size: 30px;
-  }
-}
 
 @media (min-width: 768px) {
   .container {
     max-width: 720px;
+  }
+  .jumbotron h1 {
+    font-size: 42px;
   }
 }
 
@@ -307,7 +315,9 @@ container {
 
 .jumbotron {
   background-color: white;
+  margin-top: 37px;
 }
+
 .bg-dark {
   background-color: #343a40 !important;
   background-color: #101010 !important;
