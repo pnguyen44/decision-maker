@@ -208,7 +208,7 @@ container {
     margin-left: 15px;
   }
   .card-body {
-    height: 258px;
+    height:195px;
   }
   .card-columns {
     -webkit-column-count: 3;
@@ -283,6 +283,9 @@ container {
   }
   .jumbotron h1 {
     font-size: 42px;
+  }
+  .card-body {
+    height: 278px;
   }
 }
 
