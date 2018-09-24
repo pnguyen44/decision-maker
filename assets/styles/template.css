@@ -184,6 +184,9 @@ container {
   .features {
     font-size: 20px;
   }
+  .card-body {
+    height: 237px;
+  }
 }
 
 @media (min-width: 576px) {
@@ -205,7 +208,7 @@ container {
     margin-left: 15px;
   }
   .card-body {
-    height: 222px;
+    height: 258px;
   }
   .card-columns {
     -webkit-column-count: 3;
