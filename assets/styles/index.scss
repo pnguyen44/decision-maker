@@ -1,6 +1,7 @@
 
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+@import 'template';
 $list-name-font-size: 130%;
 $font-size: 130%;
 $font-family: 'Handlee', cursive;
@@ -11,11 +12,23 @@ $item-name-font-size: 95%;
   height: 38px;
 }
 
+html, body {
+  margin: 0px;
+  padding: 0px;
+  height: 100%
+}
+
+.content-wrapper {
+  min-height: 100%;
+  padding-bottom: 60px;
+}
+
 body {
   font-family: $font-family;
   font-weight: 500;
  background-color: #efefef;
 }
+
 .before-log-in-message {
   text-align: center;
   margin-top: -1%;
@@ -40,6 +53,7 @@ body {
   float: right;
   margin-top: 10px;
 }
+
 .btn-2 {
   height: 20px;
   width: 15px;
@@ -88,19 +102,18 @@ input[type='radio'], input[type='checkbox'] {
   margin-left: 11px;
 }
 #examples {
-  margin-top: 100px;
+  margin-top: 54px;
 }
 
 .create-list-btn {
-margin-left: 19px;
+    margin-left: 25px;
   margin-top: 100px;
 }
-// .content-wrapper {
-//   margin-left: 19px;
-// }
+
 .navbar-header {
   color: white;
   // font-size: 40px;
+
 }
 header {
   color: white;
@@ -162,7 +175,9 @@ p {
 .row {
   padding: 5px;
 }
-
+.register {
+  font-size: 22px;
+}
 .samples{
   content: url('https://i.imgur.com/q9DbLHO.png');
   width: 100%;
@@ -171,25 +186,29 @@ p {
 .scroll {
   overflow-y:scroll;
 }
-footer {
-  // border-color: black;
-  height: 90px;
-  margin-top: 550px;
-  padding: 25px 0;
+#footer {
+  background-color: #101010;
+  height: 60px;
+  margin-top: -60px;
+  clear: both;
+  position: relative;
   text-align: center;
-  // background-color: black;
-  color: black;
+  color: white;
+  width: 100%;
+  left: 0px;
 }
+
   footer span a {
-    color: blue;
+    color: lightblue;
   }
   footer a:hover {
-    color: darkblue;
+    color: lightgrey;
   }
   footer span.copyright {
-    // margin-top: 900px;
+    padding-top: 5px;
     font-size: 125%;
-    line-height: 40px;
+    height: 70px;
+    line-height: 70px;
     text-transform: none;
     font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
@@ -203,9 +222,6 @@ footer {
     width: 83%;
   }
 
-  // h1 {
-  //   font-size: 151%;
-  // }
   h2 {
     font-size: 136%;
   }
@@ -236,18 +252,16 @@ footer {
   label {
     font-size: 100%;
   }
-  // footer span.copyright {
-  //     font-size: 80%;
-  // }
-
-  // .content-wrapper {
-  //     margin-left: -8px;
-  //   }
   .create-list-btn {
     margin-top: 72px;
   }
 }
 
+@media (min-width: 768px){
+.navbar-nav li  a {
+    padding-top: 23px;
+  }
+}
 
     @media (max-width: 575px) {
       footer span.copyright {
@@ -265,12 +279,6 @@ footer {
   .item-input {
     width: 89%;
   }
-  h1 {
-    font-size: 154%;
-  }
-  // .create-list-btn {
-  //   margin-top: 72px;
-  // }
 }
 
 @media only screen and (max-width: 1009px) and (min-width: 693px) {
@@ -284,13 +292,6 @@ footer {
   .item-input {
     width: 87%;
   }
-  // footer span.copyright {
-    // border: 1px solid;
-  // margin-top: 90px;
-  // }
-  // .content-wrapper {
-  //   margin-left: 19px;
-  // }
 }
 
 // @media only screen and (max-width: 1252px) and (min-width: 1024px) {

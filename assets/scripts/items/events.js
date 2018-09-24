@@ -111,9 +111,10 @@ const addItemClickHandler = function () {
 
 const deleteItemClickHander = function () {
   $('.btn-delete-item').on('click', function () {
+    // let deleteItem
     if (store.isSignedIn === true) {
-      const itemId = $(this).attr('data-item-delete-id')
-      onDeleteItem(itemId)
+      store.itemId = $(this).attr('data-item-delete-id')
+      $('#modal-delete-item-confirm').modal('show')
     }
   })
 }
@@ -146,6 +147,9 @@ const addHandlers = function () {
     if (store.item.name.trim().length > 0) {
       onUpdateItem(store.item.name, store.editItemMark, store.editItemId, store.editItemlistId)
     }
+  })
+  $('.btn-delete-item-confirm').on('click', function () {
+    onDeleteItem(store.itemId)
   })
 }
 
